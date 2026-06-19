@@ -10,7 +10,10 @@ requires-python = ">=3.11"
 dependencies = []
 
 [tool.setuptools.packages.find]
-include = ["baml_client*"]
+include = ["baml_client*", "dejavu*"]
+
+[tool.setuptools.package-data]
+dejavu = ["data/*.txt", "data/*.json"]
 
 [tool.ruff]
 exclude = ["baml_client/"]

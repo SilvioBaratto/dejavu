@@ -1,0 +1,1520 @@
+MASTER TECHNOLOGY SERVICES AGREEMENT
+
+This Master Technology Services Agreement (this "Agreement"), effective as of January 15, 2024
+(the "Effective Date"), is entered into by and between:
+
+VertexCore Systems, Inc., a corporation organized and existing under the laws of the State of
+Delaware, having its principal place of business at 1200 Innovation Drive, Suite 800, Wilmington,
+Delaware 19801 ("Provider"); and
+
+Novalis Financial Group LLC, a limited liability company organized and existing under the laws of
+the State of New York, having its principal place of business at 350 Park Avenue, 25th Floor, New
+York, New York 10022 ("Client").
+
+Provider and Client are referred to herein individually as a "Party" and collectively as the
+"Parties."
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+RECITALS
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+WHEREAS, Provider is in the business of providing technology infrastructure, software development,
+data analytics, cybersecurity, and managed IT services to enterprises in the financial services
+sector;
+
+WHEREAS, Client is a diversified financial services holding company operating investment
+management, asset servicing, broker-dealer, and insurance underwriting divisions, and requires
+sophisticated technology services to support its operations;
+
+WHEREAS, the Parties desire to establish the terms and conditions under which Provider will
+provide certain technology services to Client, and Client will receive and pay for such services;
+
+WHEREAS, the Parties have negotiated and agreed upon the scope of services, fee structure, service
+levels, data security requirements, and other terms and conditions as set forth in this Agreement
+and its Schedules;
+
+NOW, THEREFORE, in consideration of the mutual covenants and agreements hereinafter set forth, and
+for other good and valuable consideration, the receipt and sufficiency of which are hereby
+acknowledged, the Parties agree as follows:
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+ARTICLE 1 — DEFINITIONS
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+As used in this Agreement, the following terms shall have the meanings set forth below:
+
+1.1  "Affiliate" means, with respect to a Party, any entity that directly or indirectly controls,
+     is controlled by, or is under common control with such Party, where "control" means the
+     possession, direct or indirect, of the power to direct or cause the direction of the
+     management and policies of an entity, whether through ownership of voting securities, by
+     contract, or otherwise.
+
+1.2  "Applicable Law" means any federal, state, local, foreign, or international law, statute,
+     ordinance, regulation, rule, order, judgment, decree, permit, or governmental or regulatory
+     requirement applicable to the services provided under this Agreement, including without
+     limitation the Gramm-Leach-Bliley Act, the Sarbanes-Oxley Act of 2002, the Dodd-Frank Wall
+     Street Reform and Consumer Protection Act, SEC regulations promulgated thereunder, FINRA
+     rules, applicable state insurance regulations, the New York Department of Financial Services
+     cybersecurity regulation (23 NYCRR Part 500), the Bank Secrecy Act, applicable anti-money
+     laundering regulations, and any applicable data protection and privacy laws.
+
+1.3  "Background IP" means all Intellectual Property Rights in and to technology, software, tools,
+     methodologies, know-how, processes, data, inventions, discoveries, and other information
+     that: (a) was conceived, developed, or created by a Party prior to the Effective Date; or
+     (b) is conceived, developed, or created by a Party during the Term independently of this
+     Agreement and not using the other Party's Confidential Information.
+
+1.4  "Business Day" means any day other than a Saturday, Sunday, or a day on which commercial
+     banks in New York City or Wilmington, Delaware are required or authorized by Applicable Law
+     to be closed.
+
+1.5  "Change Control Process" has the meaning set forth in Schedule A, Section A-4, of this
+     Agreement.
+
+1.6  "Client Data" means all data, information, content, and materials provided by or on behalf
+     of Client to Provider in connection with the Services, including all financial data, client
+     records, trading data, position information, transaction records, personal information,
+     proprietary algorithms, and other data processed, stored, or transmitted through the Systems.
+
+1.7  "Confidential Information" has the meaning set forth in Article 7 of this Agreement.
+
+1.8  "Cyber Incident" means any actual or reasonably suspected unauthorized access to, acquisition
+     of, use of, disclosure of, modification of, or destruction of Client Data or the Systems, or
+     any event that compromises the security, confidentiality, integrity, or availability of
+     Client Data or the Systems.
+
+1.9  "Data Processing Agreement" or "DPA" means the data processing addendum attached as
+     Exhibit D-1 to Schedule D of this Agreement, which governs the processing of personal data
+     by Provider on behalf of Client.
+
+1.10 "Deliverable" means any tangible or intangible work product, output, result, report,
+     document, software, code, specification, design, architecture diagram, training material, or
+     other item produced by Provider in connection with the Services and identified as a
+     Deliverable in Schedule A or a Statement of Work.
+
+1.11 "Disaster Recovery Plan" or "DRP" means the disaster recovery and business continuity plan
+     described in Schedule C, as updated from time to time by Provider in accordance with this
+     Agreement.
+
+1.12 "Documentation" means all technical manuals, user guides, API specifications, integration
+     guides, release notes, training materials, and other documentation provided by Provider to
+     Client in connection with the Services.
+
+1.13 "Effective Date" means January 15, 2024, as set forth in the preamble to this Agreement.
+
+1.14 "Emergency Maintenance" means unscheduled maintenance required to address a critical
+     security vulnerability, system failure, or imminent risk of system failure that, in
+     Provider's reasonable judgment, cannot be deferred until a Scheduled Maintenance Window.
+
+1.15 "Escrow Agreement" means the software source code escrow agreement entered into
+     contemporaneously with this Agreement among Provider, Client, and DSI Technology Escrow
+     Services, Inc., as escrow agent.
+
+1.16 "Force Majeure Event" means any event beyond a Party's reasonable control, including
+     without limitation acts of God, fire, flood, earthquake, epidemic, pandemic, war, terrorism,
+     civil unrest, strikes or labor disputes (other than with respect to such Party's own
+     employees), governmental actions, embargoes, or failure of third-party telecommunications
+     or internet service providers; provided, however, that a Force Majeure Event shall not
+     include: (a) a Party's financial inability to perform; (b) changes in market conditions or
+     commodity prices; or (c) a failure by a Party to procure and maintain adequate business
+     continuity measures.
+
+1.17 "Foreground IP" means all Intellectual Property Rights in and to Deliverables and other
+     work product conceived, developed, or created by Provider specifically for Client under a
+     Statement of Work that expressly designates such work product as Foreground IP assigned to
+     Client.
+
+1.18 "Implementation Services" means the one-time implementation, configuration, migration, and
+     onboarding services described in Schedule A, Section A-2.
+
+1.19 "Incident Response Plan" or "IRP" means Provider's documented plan for detecting, responding
+     to, and recovering from Cyber Incidents, as described in Schedule D.
+
+1.20 "Initial Term" has the meaning set forth in Section 5.1 of this Agreement.
+
+1.21 "Intellectual Property Rights" means all rights arising from patents (including patent
+     applications and continuations), utility models, copyrights and related rights, trademarks,
+     service marks, trade names, trade dress, trade secrets, know-how, mask works, design rights,
+     database rights, and all other forms of intellectual property rights, whether registered or
+     unregistered, and including all applications and registrations for the foregoing, in each
+     case throughout the world and for the full term thereof.
+
+1.22 "Key Personnel" means those individuals identified in Schedule A, Section A-5, as Key
+     Personnel, whose continued assignment to the Client account is material to the delivery of
+     the Services.
+
+1.23 "Maintenance Window" means the period during which Provider may perform scheduled
+     maintenance on the Systems, which shall occur not more than once per calendar month
+     (unless otherwise agreed in writing) between 2:00 a.m. and 6:00 a.m. Eastern Time on
+     Saturdays, unless the Parties otherwise agree in writing.
+
+1.24 "Monthly Fee" has the meaning set forth in Section 4.1 of this Agreement.
+
+1.25 "Open Source Software" means software subject to any license that requires, as a condition
+     of use, modification, or distribution, that the software or derivative works thereof be
+     disclosed or distributed in source code form, or that others have the right to modify the
+     software for any purpose.
+
+1.26 "Personal Information" means any information that identifies or could reasonably be used to
+     identify an individual natural person, including name, address, email address, telephone
+     number, Social Security number, tax identification number, financial account number, date of
+     birth, biometric data, and any other information defined as "personal information," "personal
+     data," "personally identifiable information," or similar terms under Applicable Law.
+
+1.27 "Platform" means Provider's proprietary technology platform, including all software,
+     hardware, networks, databases, and related components used to deliver the Services, as more
+     fully described in Schedule A.
+
+1.28 "Professional Services" means the professional, consulting, and advisory services described
+     in individual Statements of Work executed under this Agreement.
+
+1.29 "Recovery Time Objective" or "RTO" has the meaning set forth in Schedule C.
+
+1.30 "Recovery Point Objective" or "RPO" has the meaning set forth in Schedule C.
+
+1.31 "Renewal Term" has the meaning set forth in Section 5.2 of this Agreement.
+
+1.32 "Sensitive Financial Data" means Client Data that constitutes material non-public
+     information, non-public personal financial information as defined under the Gramm-Leach-
+     Bliley Act, information subject to SEC Regulation S-P, or any other Client Data designated
+     in writing by Client as Sensitive Financial Data.
+
+1.33 "Service Credit" means the credit against fees payable under this Agreement provided by
+     Provider to Client as compensation for failure to meet the Service Level Targets, as
+     calculated in accordance with Schedule C.
+
+1.34 "Service Level Agreement" or "SLA" means the service level commitments set forth in
+     Schedule C of this Agreement.
+
+1.35 "Service Level Target" means each individual performance target set forth in Schedule C.
+
+1.36 "Services" means, collectively, the Managed Infrastructure Services, Implementation
+     Services, Professional Services, and any other services provided by Provider to Client
+     pursuant to this Agreement and applicable Statements of Work.
+
+1.37 "Statement of Work" or "SOW" means a written statement of work executed by both Parties
+     describing a specific engagement, project, or set of deliverables, which is incorporated
+     into and governed by this Agreement.
+
+1.38 "Subcontractor" means any third party engaged by Provider to perform any portion of the
+     Services, excluding: (a) providers of generally available commercial software or cloud
+     infrastructure services used across Provider's customer base; and (b) providers of general
+     administrative, legal, or financial services not specific to Client.
+
+1.39 "Systems" means the hardware, software, networks, servers, storage systems, databases, and
+     other technology components owned, leased, or operated by Provider and used to deliver the
+     Services to Client, together with Client's own systems that are integrated with or connected
+     to Provider's Systems in connection with the Services.
+
+1.40 "Term" means, collectively, the Initial Term and any Renewal Term(s).
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+ARTICLE 2 — SCOPE OF SERVICES
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+2.1  Managed Infrastructure Services.  Subject to the terms and conditions of this Agreement,
+     Provider shall provide to Client the following categories of managed services during the
+     Term:
+
+     (a) Infrastructure Management.  Provider shall design, deploy, configure, monitor, maintain,
+         and manage the infrastructure components required to support Client's technology
+         operations, including:
+
+         (i)   Server and compute infrastructure, including both on-premises equipment at
+               Client's designated data centers and cloud-based virtual infrastructure on
+               Amazon Web Services and Microsoft Azure;
+
+         (ii)  Storage systems, including primary, secondary, and archival storage with tiered
+               access and automated data lifecycle management;
+
+         (iii) Networking equipment and software-defined networking, including firewalls,
+               intrusion detection and prevention systems, load balancers, VPN gateways, and
+               wide-area networking connecting Client's offices in New York, Chicago, San
+               Francisco, and London;
+
+         (iv)  Backup and recovery infrastructure, including daily incremental and weekly full
+               backups of all Client Data; and
+
+         (v)   End-user computing infrastructure management for Client's employee workstations,
+               laptops, mobile devices, and associated software.
+
+     (b) Security Operations.  Provider shall operate a 24×7×365 Security Operations Center
+         (the "SOC") dedicated to monitoring Client's security posture and responding to Cyber
+         Incidents. The SOC services shall include:
+
+         (i)   Continuous monitoring of security information and event management (SIEM) systems
+               for anomalous activity;
+
+         (ii)  Vulnerability scanning and penetration testing performed no less frequently than
+               quarterly;
+
+         (iii) Patch management, including applying critical security patches within forty-eight
+               (48) hours of release and non-critical patches within thirty (30) days;
+
+         (iv)  Identity and access management, including privileged access management,
+               multi-factor authentication enforcement, and quarterly access reviews;
+
+         (v)   Threat intelligence subscription and integration; and
+
+         (vi)  Incident response activities in accordance with the Incident Response Plan.
+
+     (c) Application Management and Support.  Provider shall manage and support the following
+         Client-designated applications: (i) Portfolio Management System (Aladdin by BlackRock);
+         (ii) Order Management System (FlexTrade); (iii) Risk Management Platform (Numerix);
+         (iv) Client Reporting Platform (Addepar); (v) Compliance Monitoring System
+         (StarCompliance); and (vi) such additional applications as the Parties may agree in
+         writing from time to time.  Application management services shall include monitoring,
+         performance tuning, patch and release management, incident triage and resolution, and
+         coordination with third-party software vendors on Client's behalf.
+
+     (d) Data Management and Analytics.  Provider shall provide the following data management
+         services: (i) operation of Client's data warehouse and data lake infrastructure;
+         (ii) data integration pipeline development and maintenance, connecting market data
+         feeds, custodian data, counterparty data, and internal operational data; (iii) data
+         quality monitoring and remediation; (iv) development and maintenance of reporting and
+         analytics dashboards; and (v) regulatory reporting data preparation support.
+
+     (e) Cloud Optimization Services.  Provider shall perform ongoing cloud cost optimization
+         activities, including rightsizing of cloud instances, identification and elimination of
+         unused resources, reserved instance and savings plan procurement on Client's behalf, and
+         preparation of monthly cloud spend reports comparing actual spend against budget.
+
+2.2  Implementation Services.  Provider shall perform the one-time Implementation Services
+     described in Schedule A, Section A-2, including data migration, system integration, user
+     training, and go-live support.  The Implementation Services shall be completed within one
+     hundred twenty (120) days of the Effective Date, subject to Client's timely provision of
+     required information, access, and cooperation.
+
+2.3  Professional Services.  From time to time during the Term, the Parties may execute
+     Statements of Work for Professional Services.  Each Statement of Work shall specify the
+     scope of services, Deliverables, timeline, fees, and acceptance criteria for the applicable
+     engagement.  Provider shall not be obligated to commence any Professional Services under a
+     Statement of Work until such Statement of Work has been executed by authorized
+     representatives of both Parties.
+
+2.4  Change Control.  Any request for a material change to the scope, specifications, or timeline
+     of the Services shall be processed through the Change Control Process described in Schedule
+     A, Section A-4.  Provider shall not be obligated to implement any change that has not been
+     authorized through the Change Control Process, and Client shall not be obligated to pay for
+     any out-of-scope work performed without prior written authorization.
+
+2.5  Client Obligations.  Client shall:
+
+     (a) Designate a Client relationship manager as a primary point of contact for Provider;
+
+     (b) Provide Provider with reasonable access to Client's facilities, systems, and personnel
+         as necessary for Provider to perform the Services;
+
+     (c) Respond to Provider's requests for approvals, information, and decisions within five
+         (5) Business Days;
+
+     (d) Ensure that Client's systems and environments that interface with Provider's Systems
+         meet the technical requirements set forth in Schedule A;
+
+     (e) Comply with Provider's reasonable security policies and access control requirements;
+
+     (f) Promptly notify Provider of any material changes to Client's regulatory requirements
+         or compliance obligations; and
+
+     (g) Maintain the software licenses and third-party service agreements necessary for
+         Client's systems that Provider supports.
+
+2.6  Subcontracting.  Provider may engage Subcontractors to perform portions of the Services,
+     provided that:
+
+     (a) Provider shall remain primarily responsible to Client for the performance of all
+         obligations under this Agreement, including Services performed by Subcontractors;
+
+     (b) Provider shall not engage any Subcontractor to perform services involving access to
+         Sensitive Financial Data without Client's prior written consent; and
+
+     (c) All Subcontractors who access Client Data shall be bound by confidentiality and data
+         security obligations no less restrictive than those set forth in this Agreement.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+ARTICLE 3 — FEES AND PAYMENT TERMS
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+3.1  Monthly Fee.  Client shall pay Provider a fixed monthly fee of Eighty-Five Thousand Dollars
+     ($85,000.00) (the "Monthly Fee") for the Managed Infrastructure Services described in
+     Section 2.1.  The Monthly Fee is payable in advance on the first (1st) Business Day of each
+     calendar month.  For any partial month at the commencement or termination of this Agreement,
+     the Monthly Fee shall be prorated on a per diem basis.
+
+3.2  Implementation Services Fee.  Client shall pay Provider a one-time fee of Three Hundred
+     Thousand Dollars ($300,000.00) for the Implementation Services described in Section 2.2,
+     payable in three (3) equal installments of One Hundred Thousand Dollars ($100,000.00) each:
+
+     (a) The first installment on the Effective Date;
+     (b) The second installment upon completion of data migration; and
+     (c) The third installment upon formal acceptance of all Deliverables in Schedule A,
+         Section A-2.
+
+3.3  Professional Services Fees.  Fees for Professional Services shall be as set forth in the
+     applicable Statement of Work.  Unless otherwise specified in a Statement of Work,
+     Professional Services shall be invoiced monthly based on actual hours worked at the rates
+     set forth in Schedule B.
+
+3.4  Expenses.  Client shall reimburse Provider for all reasonable and documented out-of-pocket
+     travel, accommodation, and related expenses incurred by Provider's personnel in connection
+     with on-site services performed at Client's request, provided that: (a) such expenses exceed
+     Five Hundred Dollars ($500.00) in any single month; and (b) Provider obtains Client's prior
+     written approval for any single expense exceeding Two Thousand Five Hundred Dollars
+     ($2,500.00).  Provider shall submit expense reports with original receipts within thirty (30)
+     days of incurring the expense.
+
+3.5  Annual Fee Adjustment.  Beginning on January 15, 2025, and on each anniversary of the
+     Effective Date thereafter during the Term, the Monthly Fee shall be adjusted by the lesser
+     of: (a) three percent (3%); or (b) the percentage change in the U.S. Consumer Price Index
+     for All Urban Consumers (CPI-U) for the preceding twelve (12) months, as published by the
+     U.S. Bureau of Labor Statistics.  Provider shall provide Client with thirty (30) days' prior
+     written notice of any such adjustment.
+
+3.6  Invoicing.  Provider shall issue invoices to Client via electronic mail to the billing
+     contact designated by Client.  Invoices for Monthly Fees shall be issued no later than the
+     fifth (5th) Business Day of each month for services to be rendered in that month.  Invoices
+     for Professional Services shall be issued monthly in arrears, no later than the fifth (5th)
+     Business Day of the following month.
+
+3.7  Payment Terms.  Client shall pay all undisputed invoices within thirty (30) days of receipt
+     (the "Payment Due Date").  Payment shall be made by wire transfer to the bank account
+     designated by Provider in writing.  All amounts payable under this Agreement are stated in
+     United States Dollars, and Client shall pay in United States Dollars.
+
+3.8  Late Payment.  If Client fails to pay any undisputed amount by the Payment Due Date, such
+     overdue amount shall accrue interest at the rate of one and one-half percent (1.5%) per
+     month, or the maximum rate permitted by Applicable Law, whichever is less, from the Payment
+     Due Date until the date of actual payment.  Provider shall notify Client in writing of any
+     overdue payment, and if such payment remains outstanding for thirty (30) days after such
+     notice, Provider may, in addition to any other remedies available at law or in equity,
+     suspend performance of the Services upon ten (10) Business Days' prior written notice to
+     Client.
+
+3.9  Disputed Invoices.  Client may dispute any invoice or portion thereof in good faith by
+     providing Provider with written notice specifying in reasonable detail the amount disputed
+     and the basis for the dispute within fifteen (15) Business Days of receipt of the invoice.
+     Client shall pay all undisputed portions of any invoice by the Payment Due Date.  The
+     Parties shall negotiate in good faith to resolve disputed amounts within thirty (30) days of
+     Provider's receipt of the dispute notice.
+
+3.10 Taxes.  All fees and other amounts payable by Client under this Agreement are exclusive of
+     applicable federal, state, local, and foreign sales, use, excise, value-added, and other
+     taxes (collectively, "Taxes").  Client shall be responsible for and shall pay all Taxes
+     applicable to the Services, except for taxes based on Provider's net income, franchise
+     taxes, and employment taxes imposed on Provider's personnel.  If Client is required to
+     withhold any Taxes from any payments under this Agreement, Client shall gross up such
+     payments so that Provider receives the full amount due.
+
+3.11 Benchmarking.  Not more than once every two (2) years, Client may engage an independent
+     third-party benchmarking firm to compare the pricing for the Services against market rates
+     for comparable services from comparable providers.  If the benchmarking study concludes that
+     the fees payable under this Agreement exceed market rates by more than fifteen percent (15%),
+     the Parties shall negotiate in good faith for sixty (60) days to agree on adjusted pricing.
+     If the Parties are unable to agree, Client may provide notice of termination under Section
+     5.3, subject to the notice periods set forth therein.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+ARTICLE 4 — TERM AND RENEWAL
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+4.1  Initial Term.  This Agreement shall commence on the Effective Date and, unless earlier
+     terminated as provided herein, shall continue for a period of three (3) years ending on
+     January 14, 2027 (the "Initial Term").
+
+4.2  Renewal Term.  This Agreement shall automatically renew for successive one (1) year periods
+     (each, a "Renewal Term") upon the expiration of the Initial Term or any then-current Renewal
+     Term, unless either Party provides the other Party with written notice of non-renewal at
+     least one hundred eighty (180) days prior to the expiration of the then-current Term.
+
+4.3  Effect of Expiration.  Upon expiration or termination of this Agreement for any reason:
+
+     (a) All outstanding Statements of Work shall automatically terminate, unless the Parties
+         agree in writing to continue a specific Statement of Work on a separate, stand-alone
+         basis;
+
+     (b) Each Party shall promptly return or destroy (at the other Party's election) all
+         Confidential Information of the other Party in its possession, except to the extent
+         retention is required by Applicable Law or necessary for the Party's legal compliance
+         purposes; and
+
+     (c) All payment obligations accrued prior to expiration or termination shall survive.
+
+4.4  Transition Assistance.  Upon the expiration or termination of this Agreement for any reason,
+     Provider shall provide transition assistance services to Client for a period of up to one
+     hundred eighty (180) days (the "Transition Period"), at Client's request, to assist Client
+     in migrating the Services to an alternative provider or in-house operation.  During the
+     Transition Period, Provider shall:
+
+     (a) Continue to perform the Services at the then-current fee rates;
+     (b) Cooperate in good faith with Client and any replacement provider;
+     (c) Provide Client with copies of all Client Data in Provider's possession in mutually
+         agreed formats;
+     (d) Provide reasonable documentation and knowledge transfer to the replacement provider;
+         and
+     (e) Make appropriate Provider personnel available for knowledge transfer sessions.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+ARTICLE 5 — TERMINATION
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+5.1  Termination for Cause by Client.  Client may terminate this Agreement for cause upon thirty
+     (30) days' prior written notice to Provider if any of the following events (each, a
+     "Termination Trigger") occurs, provided that the applicable cure period set forth in this
+     Section has expired without cure:
+
+     (a) Material Breach.  Provider commits a material breach of any of its representations,
+         warranties, or obligations under this Agreement, and fails to cure such breach within
+         thirty (30) days after receipt of Client's written notice specifying the breach in
+         reasonable detail; provided, however, that if such breach is of a nature that cannot
+         reasonably be cured within thirty (30) days, Provider shall not be in default if it
+         commences cure within thirty (30) days and diligently pursues such cure to completion
+         within ninety (90) days of the original notice.
+
+     (b) Repeated Service Level Failures.  Provider fails to meet the Service Level Targets set
+         forth in Schedule C in any three (3) calendar months within any rolling twelve (12)
+         month period, and such failures are not attributable to Force Majeure Events, Client's
+         actions or omissions, or the actions of third parties beyond Provider's reasonable
+         control.  For this Termination Trigger, no cure period applies; Client may exercise
+         its termination right upon the occurrence of the third qualifying month.
+
+     (c) Security Breach.  Provider suffers a Cyber Incident attributable to Provider's
+         negligence or willful misconduct that results in unauthorized access to, disclosure of,
+         or destruction of Sensitive Financial Data, and Provider fails to remediate the root
+         cause of such Cyber Incident within sixty (60) days of Client's written notice.
+
+     (d) Insolvency.  Provider: (i) becomes insolvent, makes a general assignment for the
+         benefit of creditors, or is unable to pay its debts as they become due; (ii) has a
+         receiver, trustee, or liquidator appointed for it or a substantial portion of its
+         assets; (iii) commences, or has commenced against it, any bankruptcy, reorganization,
+         arrangement, insolvency, dissolution, liquidation, or similar proceeding under the laws
+         of the United States or any state thereof; or (iv) ceases to conduct business in the
+         ordinary course; provided that, in the case of an involuntary proceeding, Client's
+         right to terminate shall not arise until such proceeding has not been dismissed within
+         sixty (60) days of commencement.  No cure period applies to this Termination Trigger.
+
+     (e) Change of Control.  Provider undergoes a Change of Control (as defined below) to a
+         Provider Competitor (as defined in Schedule A), and Provider fails to provide Client
+         with reasonable assurances, within sixty (60) days of Client's written request, that
+         the acquirer will assume all of Provider's obligations under this Agreement without
+         material modification.  "Change of Control" means: (i) the sale or transfer of more
+         than fifty percent (50%) of the outstanding voting securities of Provider; (ii) any
+         merger, consolidation, or reorganization of Provider in which the holders of Provider's
+         outstanding voting securities immediately prior to such transaction hold less than fifty
+         percent (50%) of the voting power of the surviving or successor entity; or (iii) the
+         sale of all or substantially all of Provider's assets.
+
+5.2  Termination for Cause by Provider.  Provider may terminate this Agreement for cause upon
+     thirty (30) days' prior written notice to Client if:
+
+     (a) Client fails to pay any undisputed amount due under this Agreement within thirty (30)
+         days after receipt of Provider's written notice of non-payment (thirty-day cure period);
+
+     (b) Client commits a material breach of its confidentiality obligations under Article 7
+         and fails to cure within thirty (30) days of written notice (thirty-day cure period);
+
+     (c) Client commits a material breach of its Intellectual Property obligations under
+         Article 8 and fails to cure within thirty (30) days of written notice (thirty-day cure
+         period); or
+
+     (d) Client becomes insolvent or undergoes insolvency proceedings as described in the
+         analogous provisions of Section 5.1(d) (no cure period).
+
+5.3  Termination for Convenience by Client.  Client may terminate this Agreement for convenience
+     (i.e., without cause) upon one hundred eighty (180) days' prior written notice to Provider.
+     In the event of termination for convenience by Client, Client shall pay Provider a
+     termination fee equal to three (3) months of the Monthly Fee then in effect, in addition to
+     all fees for Services rendered through the termination date and all committed expenses
+     incurred by Provider in reliance on this Agreement.
+
+5.4  Termination for Convenience by Provider.  Provider may terminate this Agreement for
+     convenience (i.e., without cause) upon three hundred sixty-five (365) days' prior written
+     notice to Client.  Such notice shall be irrevocable, and Provider shall continue to perform
+     all obligations under this Agreement during the notice period without degradation of service
+     levels.
+
+5.5  Effect of Termination.  Upon termination of this Agreement:
+
+     (a) All licenses granted by Provider to Client under this Agreement shall immediately
+         terminate, except for licenses necessary for Client to use Deliverables already
+         delivered and accepted;
+
+     (b) Each Party shall immediately cease using the other Party's Confidential Information,
+         except as necessary for the orderly wind-down of the relationship;
+
+     (c) Provider shall promptly deliver to Client all Client Data in Provider's possession in
+         formats mutually agreed by the Parties; and
+
+     (d) The rights and obligations set forth in Articles 7, 8, 10, 11, 12, and 14, and in
+         Sections 3.10, 4.3, 4.4, 5.5, and 5.6, shall survive termination or expiration of
+         this Agreement.
+
+5.6  Return of Data.  Provider shall return all Client Data to Client within fifteen (15)
+     Business Days of the effective date of termination.  Provider shall retain no copies of
+     Client Data after completing the return, except as required by Applicable Law.  Provider
+     shall provide Client with a written certification confirming the return and deletion of
+     all Client Data within five (5) Business Days after completing such return and deletion.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+ARTICLE 6 — CONFIDENTIALITY
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+6.1  Confidential Information Defined.  For purposes of this Agreement, "Confidential
+     Information" means any information disclosed by one Party (the "Disclosing Party") to the
+     other Party (the "Receiving Party"), whether orally, in writing, electronically, or by any
+     other means, that: (a) is designated as "Confidential" or "Proprietary" or bears a similar
+     designation at the time of disclosure; (b) is disclosed in circumstances reasonably implying
+     confidentiality, given the nature of the information and the context of disclosure; or
+     (c) constitutes or contains trade secrets, business strategies, financial information,
+     technical information, Client Data, employee information, pricing, product roadmaps, or
+     other information that would reasonably be considered confidential by a sophisticated
+     business person.
+
+6.2  Obligations of Receiving Party.  The Receiving Party shall:
+
+     (a) Hold all Confidential Information of the Disclosing Party in strict confidence using
+         at least the same degree of care it uses to protect its own Confidential Information,
+         and in any event no less than reasonable care;
+
+     (b) Not disclose or permit disclosure of any Confidential Information to any third party
+         without the prior written consent of the Disclosing Party, except as expressly
+         permitted by this Article 6;
+
+     (c) Use Confidential Information of the Disclosing Party solely for the purposes of
+         performing its obligations or exercising its rights under this Agreement; and
+
+     (d) Limit access to Confidential Information to those of its employees, officers,
+         directors, contractors, and agents who have a legitimate need to know such information
+         in connection with this Agreement and who are bound by written confidentiality
+         obligations at least as protective as those set forth in this Article 6.
+
+6.3  Exceptions.  The obligations of Section 6.2 shall not apply to Confidential Information
+     that:
+
+     (a) Is or becomes generally available to the public other than through a breach of this
+         Agreement;
+
+     (b) Is or becomes available to the Receiving Party on a non-confidential basis from a
+         third-party source that is not known by the Receiving Party to be in breach of a
+         confidentiality obligation;
+
+     (c) Is independently developed by the Receiving Party without use of or reference to the
+         Disclosing Party's Confidential Information, as demonstrated by contemporaneous written
+         records; or
+
+     (d) Was already in the Receiving Party's possession prior to disclosure, as demonstrated
+         by contemporaneous written records.
+
+6.4  Required Disclosure.  The Receiving Party may disclose Confidential Information to the
+     extent required by Applicable Law, a court order, or a governmental or regulatory authority
+     with applicable jurisdiction, provided that:
+
+     (a) The Receiving Party provides the Disclosing Party with prompt written notice of such
+         requirement, to the extent legally permissible;
+
+     (b) The Receiving Party cooperates with the Disclosing Party in seeking a protective order
+         or other appropriate protection; and
+
+     (c) The Receiving Party discloses only that portion of the Confidential Information that
+         its legal counsel advises is legally required to be disclosed.
+
+6.5  Duration.  The obligations of this Article 6 shall continue during the Term and for a period
+     of five (5) years after the expiration or termination of this Agreement.  Notwithstanding
+     the foregoing, the obligations with respect to any Confidential Information that constitutes
+     a trade secret shall survive for as long as such Confidential Information remains a trade
+     secret under Applicable Law.
+
+6.6  Return or Destruction.  Promptly upon expiration or termination of this Agreement, or upon
+     the Disclosing Party's written request at any time, the Receiving Party shall, at the
+     Disclosing Party's election: (a) return all Confidential Information of the Disclosing
+     Party (and all copies thereof) to the Disclosing Party; or (b) destroy all such
+     Confidential Information (and all copies thereof) and certify such destruction in writing
+     to the Disclosing Party within ten (10) Business Days.
+
+6.7  Equitable Relief.  The Parties acknowledge that a breach of this Article 6 would cause
+     irreparable harm for which monetary damages would not be an adequate remedy, and that,
+     accordingly, the Disclosing Party shall be entitled to seek equitable relief, including
+     injunctive relief and specific performance, in addition to all other remedies available at
+     law or in equity, without the requirement of posting a bond or other security and without
+     the necessity of proving actual damages.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+ARTICLE 7 — INTELLECTUAL PROPERTY AND LICENSE GRANTS
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+7.1  Provider Background IP.  As between the Parties, Provider retains all right, title, and
+     interest in and to Provider's Background IP, including the Platform, Provider's proprietary
+     tools and methodologies, and all improvements and enhancements thereto, regardless of
+     whether such improvements were conceived or developed in connection with the Services.
+
+7.2  Client Background IP.  As between the Parties, Client retains all right, title, and interest
+     in and to Client's Background IP, including Client Data, Client's proprietary algorithms,
+     trading strategies, risk models, and Client's brand, trademarks, and trade names.
+
+7.3  License Grant by Provider.  Subject to Client's timely payment of all fees and compliance
+     with this Agreement, Provider grants to Client a non-exclusive, non-transferable,
+     non-sublicensable license to access and use the Platform and Documentation solely for
+     Client's internal business purposes during the Term.  This license does not include the
+     right to:
+
+     (a) Copy, modify, adapt, translate, or create derivative works of the Platform or
+         Documentation;
+
+     (b) Reverse engineer, disassemble, decompile, or otherwise attempt to derive the source
+         code of the Platform;
+
+     (c) Sublicense, sell, resell, transfer, assign, or otherwise exploit the Platform or
+         Documentation for the benefit of any third party;
+
+     (d) Use the Platform to provide services to third parties without Provider's prior written
+         consent; or
+
+     (e) Remove or alter any proprietary notices, labels, or marks on the Platform or
+         Documentation.
+
+7.4  Foreground IP.  All Deliverables designated as Foreground IP in an applicable Statement of
+     Work, and all Intellectual Property Rights therein, shall be deemed works made for hire to
+     the extent permitted by Applicable Law, and to the extent they do not qualify as works made
+     for hire, Provider hereby irrevocably assigns to Client all right, title, and interest in
+     and to such Foreground IP.  Provider shall execute and deliver such additional documents
+     and instruments as Client may reasonably request to evidence or record such assignment.
+     Provider retains a non-exclusive, perpetual, irrevocable, royalty-free license to any
+     general methodologies, techniques, processes, or know-how incorporated into or developed
+     in connection with Foreground IP.
+
+7.5  Open Source Software.  Provider shall not incorporate any Open Source Software into any
+     Deliverables without Client's prior written consent.  If Provider incorporates Open Source
+     Software into any Deliverables with Client's consent, Provider shall: (a) identify all Open
+     Source Software components and the applicable licenses; (b) comply with all obligations
+     imposed by the applicable Open Source Software licenses; and (c) ensure that the
+     incorporation of Open Source Software does not impose any obligation on Client to disclose
+     or make available Client's Confidential Information or other proprietary technology.
+
+7.6  Data Aggregation.  Provider shall not use Client Data, or any aggregation, anonymization,
+     or derivative of Client Data, for any purpose other than providing the Services to Client,
+     without Client's prior written consent.  Provider shall not combine Client Data with data of
+     other Provider clients in any way that permits attribution of any data to Client or that
+     could identify Client as the source.  Notwithstanding the foregoing, Provider may use
+     anonymized and aggregated data derived from the Services, that cannot be traced back to
+     Client or Client's clients, for benchmarking and service improvement purposes.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+ARTICLE 8 — WARRANTIES AND REPRESENTATIONS
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+8.1  Provider Representations and Warranties.  Provider represents and warrants to Client that:
+
+     (a) Organization and Authority.  Provider is a corporation duly organized, validly existing,
+         and in good standing under the laws of Delaware and has full corporate power and
+         authority to enter into this Agreement and to perform its obligations hereunder.
+
+     (b) No Conflicts.  The execution, delivery, and performance of this Agreement by Provider
+         do not and will not conflict with or violate any Applicable Law, or the terms of any
+         agreement to which Provider is a party or by which it is bound.
+
+     (c) Services Warranty.  Provider warrants that:
+
+         (i)   The Services will be performed in a professional, workmanlike manner consistent
+               with industry standards for managed technology services provided to financial
+               services enterprises;
+
+         (ii)  Provider's personnel performing the Services have the skills, training, and
+               qualifications necessary to perform such Services;
+
+         (iii) The Services will materially conform to the specifications and service levels
+               set forth in this Agreement and applicable Statements of Work;
+
+         (iv)  The Platform will perform materially in accordance with the Documentation; and
+
+         (v)   Provider will promptly notify Client of any known defects, bugs, vulnerabilities,
+               or limitations that materially and adversely affect the performance of the
+               Services.
+
+     (d) Security Warranty.  Provider warrants that:
+
+         (i)   It has implemented and will maintain information security policies, procedures,
+               and controls consistent with ISO 27001 and NIST SP 800-53 frameworks and
+               sufficient to protect Client Data from unauthorized access, disclosure,
+               alteration, and destruction;
+
+         (ii)  It will conduct annual third-party penetration testing of the Systems and
+               provide Client with the executive summary of each such test upon request;
+
+         (iii) It maintains, and will continue to maintain during the Term, SOC 2 Type II
+               certification and will provide Client with copies of Provider's most recent
+               SOC 2 Type II report upon written request; and
+
+         (iv)  It will notify Client of any Cyber Incident affecting Client Data or the Systems
+               within twenty-four (24) hours of Provider's discovery thereof.
+
+     (e) IP Non-Infringement.  Provider warrants that the Platform, Documentation, and
+         Deliverables do not and will not, to Provider's knowledge, infringe, misappropriate,
+         or otherwise violate the Intellectual Property Rights of any third party.
+
+     (f) No Malicious Code.  Provider warrants that the Platform and all software delivered to
+         Client do not and will not contain any virus, worm, Trojan horse, spyware, back door,
+         ransomware, or other malicious code designed to disrupt, damage, or gain unauthorized
+         access to systems or data.
+
+     (g) Compliance.  Provider warrants that it will perform the Services in compliance with
+         all Applicable Law, and that it will obtain and maintain all permits, licenses,
+         certifications, and approvals required by Applicable Law in connection with the Services.
+
+8.2  Client Representations and Warranties.  Client represents and warrants to Provider that:
+
+     (a) Client is a limited liability company duly organized, validly existing, and in good
+         standing under the laws of New York and has full power and authority to enter into this
+         Agreement;
+
+     (b) The execution, delivery, and performance of this Agreement by Client do not and will
+         not conflict with or violate any Applicable Law or any agreement to which Client is a
+         party;
+
+     (c) Client has the right to provide Client Data to Provider for the purposes set forth in
+         this Agreement; and
+
+     (d) Client will comply with all Applicable Law in connection with its use of the Services.
+
+8.3  Disclaimer.  EXCEPT AS EXPRESSLY SET FORTH IN SECTIONS 8.1 AND 8.2, NEITHER PARTY MAKES
+     ANY REPRESENTATIONS OR WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WITHOUT
+     LIMITATION: (a) ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+     PURPOSE, OR NON-INFRINGEMENT; (b) ANY WARRANTY THAT THE SERVICES WILL BE UNINTERRUPTED OR
+     ERROR-FREE; (c) ANY WARRANTY AS TO THE ACCURACY OR COMPLETENESS OF ANY DATA OR INFORMATION
+     PROVIDED HEREUNDER; OR (d) ANY WARRANTY WITH RESPECT TO THE ADEQUACY OF THE SERVICES FOR
+     ANY SPECIFIC PURPOSE OR RESULT TO BE ACHIEVED BY CLIENT.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+ARTICLE 9 — LIMITATION OF LIABILITY
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+9.1  Limitation on Consequential Damages.  IN NO EVENT SHALL EITHER PARTY BE LIABLE TO THE OTHER
+     FOR ANY INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES, INCLUDING
+     WITHOUT LIMITATION DAMAGES FOR LOSS OF PROFITS, LOSS OF REVENUE, LOSS OF BUSINESS, LOSS OF
+     GOODWILL, LOSS OF DATA, COST OF COVER, OR COST OF SUBSTITUTE GOODS OR SERVICES, ARISING
+     OUT OF OR IN CONNECTION WITH THIS AGREEMENT, REGARDLESS OF WHETHER SUCH DAMAGES WERE
+     FORESEEABLE AND REGARDLESS OF WHETHER THE PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
+     SUCH DAMAGES, EXCEPT:
+
+     (a) A Party's liability for damages arising from its indemnification obligations under
+         Article 10 with respect to third-party claims;
+
+     (b) A Party's liability for fraud or willful misconduct;
+
+     (c) Client's liability for unauthorized use of Provider's Background IP; or
+
+     (d) Provider's liability for damages arising from a breach of Provider's data security
+         obligations under Section 8.1(d) that results in unauthorized disclosure of Sensitive
+         Financial Data attributable to Provider's gross negligence or willful misconduct.
+
+9.2  Aggregate Liability Cap.  EACH PARTY'S AGGREGATE AND CUMULATIVE LIABILITY TO THE OTHER
+     PARTY FOR ALL CLAIMS ARISING OUT OF OR RELATED TO THIS AGREEMENT, WHETHER BASED ON
+     CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, OR ANY OTHER THEORY OF LIABILITY,
+     SHALL NOT EXCEED TWO MILLION FIVE HUNDRED THOUSAND DOLLARS ($2,500,000.00) (THE "LIABILITY
+     CAP").  THE LIABILITY CAP SHALL NOT APPLY TO:
+
+     (a) EITHER PARTY'S INDEMNIFICATION OBLIGATIONS UNDER ARTICLE 10 WITH RESPECT TO
+         THIRD-PARTY CLAIMS ALLEGING INFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS;
+
+     (b) EITHER PARTY'S LIABILITY FOR FRAUD OR WILLFUL MISCONDUCT; OR
+
+     (c) CLIENT'S PAYMENT OBLIGATIONS UNDER ARTICLE 3.
+
+9.3  Essential Basis.  The Parties acknowledge that the limitations of liability set forth in
+     Sections 9.1 and 9.2 reflect a reasonable allocation of risk between the Parties, have been
+     reflected in the fees negotiated between the Parties, and are an essential element of the
+     basis of the bargain between the Parties.  Provider would not have entered into this
+     Agreement without these limitations.
+
+9.4  Mitigation.  Each Party shall take commercially reasonable steps to mitigate its losses and
+     damages upon the occurrence of any event that gives rise to a claim under this Agreement.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+ARTICLE 10 — INDEMNIFICATION
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+10.1 Indemnification by Provider.  Provider shall indemnify, defend, and hold harmless Client
+     and its Affiliates, members, managers, officers, employees, agents, and successors
+     (collectively, "Client Indemnitees") from and against any and all claims, demands, actions,
+     suits, proceedings, losses, damages, liabilities, costs, and expenses (including reasonable
+     attorneys' fees and court costs) (collectively, "Losses") arising out of or relating to:
+
+     (a) Any third-party claim alleging that the Platform, Documentation, or any Deliverable,
+         as delivered by Provider and used by Client in accordance with this Agreement,
+         infringes or misappropriates any patent, copyright, trademark, trade secret, or other
+         Intellectual Property Right of such third party;
+
+     (b) Provider's breach of its representations, warranties, or obligations under this
+         Agreement;
+
+     (c) Provider's gross negligence or willful misconduct in connection with the performance
+         of the Services;
+
+     (d) Provider's violation of Applicable Law; or
+
+     (e) Any Cyber Incident attributable to Provider's failure to maintain the security
+         standards required under this Agreement.
+
+10.2 Indemnification by Client.  Client shall indemnify, defend, and hold harmless Provider and
+     its Affiliates, officers, directors, employees, agents, and successors (collectively,
+     "Provider Indemnitees") from and against any Losses arising out of or relating to:
+
+     (a) Client's breach of its representations, warranties, or obligations under this
+         Agreement;
+
+     (b) Client's use of the Services in violation of Applicable Law or the terms of this
+         Agreement;
+
+     (c) Client's gross negligence or willful misconduct;
+
+     (d) Any claim arising from Client Data, including any allegation that Client lacked the
+         right to provide Client Data to Provider for processing under this Agreement; or
+
+     (e) Client's violation of any Applicable Law.
+
+10.3 IP Infringement Remedies.  If the Platform or Documentation becomes, or in Provider's
+     reasonable opinion is likely to become, the subject of an infringement claim described in
+     Section 10.1(a), Provider shall, at its option and expense:
+
+     (a) Procure for Client the right to continue using the Platform or Documentation as
+         permitted under this Agreement;
+
+     (b) Replace or modify the allegedly infringing component such that it no longer infringes;
+         or
+
+     (c) If neither (a) nor (b) is commercially practicable, terminate Client's license to
+         the allegedly infringing component upon notice and refund to Client the fees allocable
+         to the infringing component for the twelve (12) month period preceding such
+         termination.
+
+     Provider shall have no obligation under this Section 10.3 to the extent the infringement
+     claim arises from: (i) Client's modification of the Platform or Documentation without
+     Provider's authorization; (ii) the combination of the Platform or Documentation with
+     products, services, or technology not supplied by Provider, where the infringement would
+     not have occurred but for such combination; or (iii) Client's use of the Platform or
+     Documentation in a manner not authorized by this Agreement or the Documentation.
+
+10.4 Indemnification Procedures.  The indemnified party shall:
+
+     (a) Promptly notify the indemnifying party in writing of any claim for which
+         indemnification is sought, provided that a failure to provide prompt notice shall not
+         relieve the indemnifying party of its obligations except to the extent it is materially
+         prejudiced by such failure;
+
+     (b) Grant the indemnifying party sole control of the defense and settlement of such claim,
+         provided that the indemnified party may retain counsel at its own expense; and
+
+     (c) Provide the indemnifying party with reasonable cooperation and assistance in
+         connection with the defense of such claim, at the indemnifying party's expense.
+
+     The indemnifying party shall not settle any claim in a manner that imposes any obligation,
+     liability, or restriction on the indemnified party without the indemnified party's prior
+     written consent.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+ARTICLE 11 — GOVERNING LAW AND DISPUTE RESOLUTION
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+11.1 Governing Law.  This Agreement shall be governed by, construed, and enforced in accordance
+     with the laws of the State of Delaware, without giving effect to any choice of law or
+     conflict of law provisions thereof that would cause the application of the laws of any other
+     jurisdiction.
+
+11.2 Dispute Resolution — Negotiation.  In the event of any dispute, controversy, or claim
+     arising out of or relating to this Agreement, or the breach, termination, or validity
+     thereof (a "Dispute"), the Parties shall first attempt to resolve such Dispute through
+     good-faith negotiation between senior representatives of each Party for a period of thirty
+     (30) days after the aggrieved Party delivers written notice to the other Party describing
+     the Dispute in reasonable detail.  If the Parties are unable to resolve the Dispute through
+     negotiation within such period, either Party may escalate the Dispute to binding arbitration
+     as provided in Section 11.3.
+
+11.3 Arbitration.  Any Dispute not resolved pursuant to Section 11.2 shall be finally resolved
+     by binding arbitration administered by the American Arbitration Association ("AAA") in
+     accordance with its Commercial Arbitration Rules then in effect.  The arbitration shall
+     take place in Wilmington, Delaware, before a single arbitrator mutually agreed upon by the
+     Parties; if the Parties cannot agree on an arbitrator within fifteen (15) days after either
+     Party requests arbitration, the AAA shall appoint the arbitrator.  The arbitration shall
+     be conducted in the English language.  The arbitrator shall have authority to award any
+     remedy that a court of competent jurisdiction could award.  The award of the arbitrator
+     shall be final, binding, and non-appealable (except as provided under the Federal
+     Arbitration Act), and judgment upon the award may be entered in any court of competent
+     jurisdiction.  The costs of the arbitration, including the arbitrator's fees and AAA's
+     administrative fees, shall be borne equally by the Parties, unless the arbitrator
+     determines otherwise.  Each Party shall bear its own attorneys' fees, except that the
+     arbitrator may award attorneys' fees to the prevailing Party in the event of frivolous or
+     bad-faith claims or defenses.  The Parties agree to maintain the confidentiality of all
+     aspects of the arbitration proceedings.
+
+11.4 Emergency Relief.  Notwithstanding Sections 11.2 and 11.3, either Party may seek emergency
+     injunctive or other equitable relief from a court of competent jurisdiction in the State of
+     Delaware to prevent irreparable harm, without first complying with the dispute resolution
+     procedures set forth in this Article 11.
+
+11.5 Jurisdiction.  For purposes of enforcing any arbitral award, seeking emergency relief under
+     Section 11.4, or any claim not subject to arbitration, each Party hereby irrevocably
+     consents to the exclusive jurisdiction and venue of the federal and state courts located in
+     Wilmington, Delaware.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+ARTICLE 12 — NOTICES
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+12.1 Notice Requirements.  All notices, requests, demands, consents, approvals, and other
+     communications required or permitted under this Agreement shall be in writing and shall be
+     deemed duly given: (a) when delivered personally to the recipient; (b) one (1) Business Day
+     after deposit with a nationally recognized overnight courier service (e.g., FedEx, UPS),
+     with charges prepaid and addressed as set forth in Section 12.2; (c) upon electronic
+     transmission (including email), provided that a confirmation copy is sent within one (1)
+     Business Day by one of the methods described in (a) or (b); or (d) three (3) Business Days
+     after mailing by United States Certified Mail, Return Receipt Requested, postage prepaid,
+     addressed as set forth in Section 12.2.
+
+12.2 Notice Addresses.
+
+     If to Provider:
+         VertexCore Systems, Inc.
+         Attn: General Counsel
+         1200 Innovation Drive, Suite 800
+         Wilmington, Delaware 19801
+         Email: legal@vertexcoresystems.com
+
+     With a copy to (which shall not constitute notice):
+         Morrison & Foerster LLP
+         Attn: Technology Transactions Group
+         2100 L Street NW, Suite 900
+         Washington, DC 20037
+
+     If to Client:
+         Novalis Financial Group LLC
+         Attn: Chief Technology Officer
+         350 Park Avenue, 25th Floor
+         New York, New York 10022
+         Email: technology.legal@novalisfinancial.com
+
+     With a copy to (which shall not constitute notice):
+         Novalis Financial Group LLC
+         Attn: General Counsel
+         350 Park Avenue, 25th Floor
+         New York, New York 10022
+         Email: legal@novalisfinancial.com
+
+12.3 Change of Address.  Either Party may change its notice address by providing the other Party
+     with at least ten (10) Business Days' prior written notice of the new address in accordance
+     with this Article 12.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+ARTICLE 13 — GENERAL PROVISIONS
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+13.1 Entire Agreement.  This Agreement (including all Schedules and Exhibits attached hereto,
+     and all Statements of Work executed hereunder) constitutes the entire agreement between the
+     Parties with respect to the subject matter hereof, and supersedes all prior and
+     contemporaneous agreements, understandings, negotiations, and representations of the Parties
+     with respect to the subject matter hereof, including any letters of intent, term sheets,
+     non-disclosure agreements (to the extent they conflict with Article 6), and any standard
+     purchase orders.
+
+13.2 Amendments.  This Agreement may not be amended, modified, or supplemented except by a
+     written instrument signed by authorized representatives of both Parties.  No purchase order,
+     invoice, acknowledgment, or other preprinted form shall constitute an amendment to or
+     modification of this Agreement, even if signed by the receiving Party.
+
+13.3 Waiver.  No failure or delay by either Party in exercising any right, power, or privilege
+     under this Agreement shall operate as a waiver thereof.  No single or partial exercise of
+     any right, power, or privilege shall preclude any further exercise thereof or the exercise
+     of any other right, power, or privilege.  A waiver of any right under this Agreement must
+     be in writing and signed by the waiving Party to be effective.
+
+13.4 Severability.  If any provision of this Agreement is held to be invalid, illegal, or
+     unenforceable in any respect, such invalidity, illegality, or unenforceability shall not
+     affect any other provision hereof, and this Agreement shall be construed as if such
+     invalid, illegal, or unenforceable provision had never been contained herein.  In such case,
+     the Parties shall cooperate in good faith to amend this Agreement to give maximum legal
+     force to the intention of the invalid, illegal, or unenforceable provision.
+
+13.5 Assignment.  Neither Party may assign or transfer this Agreement, or any rights or
+     obligations hereunder, without the prior written consent of the other Party, which consent
+     shall not be unreasonably withheld, conditioned, or delayed; provided, however, that:
+     (a) either Party may assign this Agreement without consent to an Affiliate, provided that
+     such Party remains primarily liable for all obligations under this Agreement; and (b) either
+     Party may assign this Agreement without consent to a successor entity in connection with a
+     merger, acquisition, or sale of all or substantially all of its assets, provided that the
+     successor expressly assumes all obligations under this Agreement.  Any purported assignment
+     in violation of this Section 13.5 shall be null and void.
+
+13.6 Force Majeure.  Neither Party shall be liable for any delay or failure to perform its
+     obligations under this Agreement (other than payment obligations) to the extent caused by a
+     Force Majeure Event, provided that: (a) the affected Party promptly notifies the other Party
+     in writing of the Force Majeure Event and its expected duration; (b) the affected Party uses
+     commercially reasonable efforts to mitigate the impact of the Force Majeure Event and to
+     resume performance as soon as practicable; and (c) if the Force Majeure Event continues for
+     more than sixty (60) days, the non-affected Party may terminate this Agreement upon thirty
+     (30) days' written notice, without liability to the affected Party.
+
+13.7 Independent Contractor.  Provider is an independent contractor, and nothing in this
+     Agreement shall create, or be deemed to create, a partnership, joint venture, agency,
+     employment, or franchise relationship between the Parties.  Provider's personnel are not
+     employees of Client, and Client shall have no responsibility for withholding taxes, workers'
+     compensation, unemployment insurance, or other employment-related obligations with respect
+     to Provider's personnel.
+
+13.8 No Third-Party Beneficiaries.  This Agreement is for the sole and exclusive benefit of the
+     Parties and their respective permitted successors and assigns.  Nothing in this Agreement,
+     express or implied, is intended to or shall: (a) confer upon any other person any legal or
+     equitable right, benefit, or remedy of any nature whatsoever under or by reason of this
+     Agreement; or (b) constitute the Parties as partners or joint venturers, or create any
+     similar relationship.
+
+13.9 Publicity.  Neither Party shall issue any press release, public announcement, or other
+     marketing material referring to the other Party or this Agreement without the other Party's
+     prior written consent, except as required by Applicable Law or the rules of any stock
+     exchange or securities regulatory authority.
+
+13.10 Counterparts.  This Agreement may be executed in one or more counterparts, each of which
+      shall be deemed an original and all of which, when taken together, shall constitute one and
+      the same instrument.  Electronic signatures (including signatures transmitted by PDF,
+      DocuSign, or other electronic signature platform) shall be deemed valid and binding to the
+      same extent as original signatures.
+
+13.11 Headings.  Article and section headings in this Agreement are included for convenience of
+      reference only and shall not affect the construction or interpretation of this Agreement.
+
+13.12 Construction.  This Agreement shall be construed without regard to any presumption or rule
+      requiring construction against the Party causing this Agreement to be drafted.  The word
+      "including" (or "includes") shall be deemed to mean "including without limitation" (or
+      "includes without limitation").  "Or" is not exclusive.  References to a "day" mean a
+      calendar day unless specified as a "Business Day."  The singular includes the plural and
+      vice versa, and gender-specific terms include all genders.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+SCHEDULE A — DESCRIPTION OF SERVICES
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+A-1.  Managed Infrastructure Services Scope.
+
+A-1.1 Infrastructure Management.
+
+      Provider shall manage Client's technology infrastructure across the following environments:
+
+      Primary Production Environment:
+      - Data Center: Equinix NY5, Secaucus, New Jersey
+      - Cloud: AWS us-east-1 (primary) and AWS us-west-2 (disaster recovery standby)
+      - Servers: 48 physical servers (24 primary compute nodes, 12 database nodes,
+        12 storage nodes) plus up to 200 cloud virtual machines (auto-scaled)
+      - Storage: 500 TB primary SSD storage, 1 PB spinning-disk archival storage,
+        AWS S3 Glacier for seven-year archival retention
+      - Network: Redundant 10 Gbps data center interconnects, 100 Gbps core backbone,
+        BGP multi-homed internet access with two upstream providers
+
+      Secondary / Disaster Recovery Environment:
+      - Data Center: Equinix CH2, Chicago, Illinois
+      - Cloud: AWS us-east-2 (secondary disaster-recovery)
+      - Configuration: Warm standby with automated failover capability within the
+        Recovery Time Objective of four (4) hours
+
+      Office WAN Connectivity:
+      - New York headquarters: Dual 1 Gbps MPLS circuits, LTE cellular backup
+      - Chicago office: 500 Mbps MPLS circuit, cable broadband backup
+      - San Francisco office: 500 Mbps MPLS circuit, cable broadband backup
+      - London office: 500 Mbps MPLS circuit, VSAT satellite backup
+
+A-1.2 Monitoring and Alerting.
+
+      Provider shall maintain 24×7×365 monitoring from its network operations center (NOC)
+      covering all infrastructure components:
+
+      - CPU utilization (alert threshold: sustained >85% for 10 minutes)
+      - Memory utilization (alert threshold: sustained >90% for 10 minutes)
+      - Disk utilization (alert threshold: >80% capacity)
+      - Network bandwidth utilization (alert threshold: sustained >70% of circuit capacity)
+      - Application response times (alert threshold: >2× baseline for 5 minutes)
+      - Database query performance (alert threshold: query p95 latency >3× baseline)
+      - Backup job status (alert on failure within 30 minutes of completion window)
+      - Security events (continuous, real-time via SIEM)
+
+      All alerts shall be triaged and escalated in accordance with the severity matrix in
+      Schedule C, Section C-3.
+
+A-1.3 Capacity Planning.
+
+      Provider shall conduct quarterly capacity reviews and provide Client with a written
+      capacity report within ten (10) Business Days after the end of each calendar quarter.
+      The capacity report shall include: current utilization trends, projected growth
+      requirements for the next twelve (12) months, recommended capacity additions, and
+      associated cost estimates.
+
+A-2.  Implementation Services.
+
+A-2.1 Implementation Phases.
+
+      Phase 1 — Discovery and Design (Weeks 1–4):
+      Provider shall conduct an assessment of Client's existing technology environment,
+      interview key stakeholders, document as-is architecture, and produce a detailed design
+      document for the target-state architecture and migration approach.  Deliverables include:
+      As-Is Architecture Assessment Report, Target-State Architecture Design Document, and
+      Migration Plan.
+
+      Phase 2 — Infrastructure Build-Out (Weeks 5–10):
+      Provider shall procure, deploy, and configure new infrastructure components, establish
+      connectivity, configure monitoring and management tools, and build out the production
+      and disaster-recovery environments in accordance with the approved design.  Deliverables
+      include: Configured Production Environment, Configured DR Environment, Network
+      Connectivity Report, and Monitoring Dashboard.
+
+      Phase 3 — Data Migration (Weeks 11–16):
+      Provider shall migrate Client Data from legacy systems to the new infrastructure,
+      including: (a) migrating approximately 200 TB of historical financial data; (b) migrating
+      Client's applications to the new infrastructure; (c) configuring and testing integrations
+      with third-party systems; and (d) conducting performance and stress testing.  Deliverables
+      include: Migration Completion Report, Integration Test Report, and Performance Test Report.
+
+      Phase 4 — User Acceptance Testing (Weeks 17–20):
+      Client shall conduct user acceptance testing of the migrated environment.  Provider shall
+      provide dedicated UAT support, including defect remediation within two (2) Business Days
+      of defect report.  Client shall provide formal written acceptance of all Deliverables
+      within ten (10) Business Days of completing UAT, specifying any Deliverables not yet
+      accepted and the reasons therefor.
+
+      Phase 5 — Go-Live and Hypercare (Weeks 21–24):
+      Provider shall support the go-live transition and provide hypercare support (dedicated
+      on-call resources with four-hour response commitment) for thirty (30) days post-go-live.
+      Deliverables include: Go-Live Checklist, Hypercare Completion Report.
+
+A-2.2 Client Responsibilities for Implementation.
+
+      Client shall:
+      - Assign a full-time implementation project manager;
+      - Complete data mapping and data quality assessment for all systems being migrated;
+      - Provide access to existing systems, documentation, and technical personnel;
+      - Make key stakeholders available for design workshops (estimated eight hours per
+        stakeholder per workshop);
+      - Procure and maintain all required third-party software licenses; and
+      - Provide written sign-off on Phase-gate deliverables within five (5) Business Days.
+
+A-3.  Service Exclusions.
+
+      The following are expressly excluded from the scope of the Services and are Client's
+      responsibility unless separately agreed in a Statement of Work:
+
+      (a) Procurement and maintenance of third-party software licenses (other than as
+          explicitly included in Schedule B);
+      (b) End-user hardware procurement;
+      (c) Physical security of Client's office premises;
+      (d) Public internet access services (other than the MPLS circuits specified in
+          Section A-1.1);
+      (e) Modification of Client's proprietary algorithms and trading strategies;
+      (f) Regulatory reporting submissions (Provider provides data preparation support
+          but not submission services);
+      (g) Legal, compliance, tax, or financial advisory services; and
+      (h) Business process outsourcing.
+
+A-4.  Change Control Process.
+
+      All requests for changes to the Services shall be submitted to Provider's designated
+      Change Manager via Provider's change management portal within two (2) Business Days of
+      identifying the need.  Provider shall assess and respond to each change request within
+      five (5) Business Days, providing an impact assessment that includes: description of the
+      change, estimated effort and cost, impact on timeline, impact on service levels, risk
+      assessment, and testing plan.
+
+      Authorization Thresholds:
+      - Changes with incremental monthly cost below $5,000.00: Client relationship manager
+      - Changes with incremental monthly cost of $5,000.00–$25,000.00: Client CTO or CIO
+      - Changes with incremental monthly cost above $25,000.00: Client CFO and CTO/CIO
+
+A-5.  Key Personnel.
+
+      The following roles are designated as Key Personnel:
+      - Provider: Client Account Director, Lead Infrastructure Architect,
+        Security Operations Manager, Data Center Operations Lead
+      - Client: Client Relationship Manager, Client CTO or designee,
+        Implementation Project Manager
+
+      Provider shall not reassign any Key Personnel to other accounts without providing
+      Client with at least thirty (30) days' prior written notice and proposing a suitably
+      qualified replacement.  If Client objects in writing to a proposed replacement within
+      ten (10) Business Days of Provider's notice, the Parties shall escalate to senior
+      management for resolution before any reassignment takes effect.
+
+A-6.  Provider Competitors.
+
+      For purposes of Section 5.1(e), "Provider Competitors" means the following entities
+      and their successors and acquirers: Broadridge Financial Solutions, Inc.; Fiserv, Inc.;
+      FIS Global; SS&C Technologies Holdings, Inc.; Cognizant Technology Solutions Corporation;
+      Infosys Limited; Tata Consultancy Services Limited; and any other entity that derives
+      more than thirty percent (30%) of its revenues from managed technology services to the
+      financial services industry and has annual revenues exceeding $500,000,000.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+SCHEDULE B — FEE SCHEDULE
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+B-1.  Monthly Fee for Managed Infrastructure Services.
+
+      The Monthly Fee for Managed Infrastructure Services under Section 3.1 is
+      $85,000.00 per calendar month.
+
+B-2.  Professional Services Rates.
+
+      ┌──────────────────────────────┬─────────────────────────┬─────────────────────────────┐
+      │ Role                         │ T&M Rate (per hour)     │ Blended Project Rate (/hr)  │
+      ├──────────────────────────────┼─────────────────────────┼─────────────────────────────┤
+      │ Principal Architect          │ $350.00                 │ $275.00                     │
+      │ Senior Security Engineer     │ $325.00                 │ $260.00                     │
+      │ Senior Data Engineer         │ $325.00                 │ $260.00                     │
+      │ Senior Infrastructure Eng.   │ $275.00                 │ $225.00                     │
+      │ Infrastructure Engineer      │ $225.00                 │ $185.00                     │
+      │ Project Manager              │ $200.00                 │ $165.00                     │
+      │ Business Analyst             │ $175.00                 │ $145.00                     │
+      │ Security Specialist          │ $300.00                 │ $245.00                     │
+      │ Data Scientist               │ $300.00                 │ $245.00                     │
+      └──────────────────────────────┴─────────────────────────┴─────────────────────────────┘
+
+      Blended project rates apply to fixed-fee SOW engagements where total estimated
+      project hours exceed five hundred (500) hours.
+
+B-3.  Implementation Services Fee.
+
+      One-time fee of $300,000.00, payable in three installments per Section 3.2.
+
+B-4.  Third-Party Software and Cloud Infrastructure Pass-Through.
+
+      Provider shall invoice Client for all third-party software licenses, maintenance fees,
+      and cloud infrastructure costs as direct pass-through costs at Provider's actual cost,
+      without markup.  Provider shall obtain Client's prior written approval for any single
+      third-party cost exceeding $10,000.00 per month.  Provider shall provide a monthly
+      itemized report of all third-party pass-through costs within five (5) Business Days
+      after the end of each calendar month.
+
+B-5.  Fee Adjustment Schedule (illustrative).
+
+      ┌──────────┬──────────────────────┬────────────────────────────────────────────────────┐
+      │ Year     │ Monthly Fee (Max)    │ Notes                                              │
+      ├──────────┼──────────────────────┼────────────────────────────────────────────────────┤
+      │ Year 1   │ $85,000.00           │ Fixed; no CPI adjustment in Year 1                │
+      │ Year 2   │ Up to $87,550.00     │ CPI cap 3%; actual CPI Jan 2024–Jan 2025           │
+      │ Year 3   │ Up to $90,177.00     │ CPI cap 3%; actual CPI Jan 2025–Jan 2026           │
+      │ Renewal  │ Negotiated annually  │ CPI cap 3% per Renewal Term, per Section 3.5      │
+      └──────────┴──────────────────────┴────────────────────────────────────────────────────┘
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+SCHEDULE C — SERVICE LEVEL AGREEMENT
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+C-1.  Definitions.
+
+      "Availability" means the percentage of time during a calendar month that the Production
+      Systems are accessible and functional, calculated as:
+          [(Total Minutes in Month − Downtime Minutes) / Total Minutes in Month] × 100%.
+
+      "Downtime" means any period during which the Production Systems are unavailable due
+      to a service outage, excluding: (a) Scheduled Maintenance Windows; (b) Emergency
+      Maintenance; (c) Force Majeure Events; (d) outages caused by Client's actions or
+      omissions; and (e) outages caused by third-party services not under Provider's control.
+
+      "Critical Incident" means an outage or degradation that renders the Production Systems
+      completely inaccessible or causes complete unavailability of a Core Application, with
+      no available workaround.
+
+      "High Incident" means an outage or degradation that significantly impairs a Core
+      Application's functionality, with a workaround available.
+
+      "Medium Incident" means a partial service degradation that does not prevent use of Core
+      Application functionality.
+
+      "Low Incident" means a minor issue with minimal impact on service delivery.
+
+C-2.  Service Level Targets.
+
+      ┌────────────────────────────────────────────┬───────────────┬──────────────────────────┐
+      │ Service Level Metric                       │ Target        │ Measurement Period        │
+      ├────────────────────────────────────────────┼───────────────┼──────────────────────────┤
+      │ Production System Availability             │ 99.95%        │ Calendar Month           │
+      │ Core Application Availability              │ 99.90%        │ Calendar Month           │
+      │ Critical Incident Response                 │ 15 minutes    │ Per Incident             │
+      │ Critical Incident Resolution               │ 4 hours       │ Per Incident             │
+      │ High Incident Response                     │ 30 minutes    │ Per Incident             │
+      │ High Incident Resolution                   │ 8 hours       │ Per Incident             │
+      │ Medium Incident Response                   │ 2 hours       │ Per Incident             │
+      │ Medium Incident Resolution                 │ 24 hours      │ Per Incident             │
+      │ Low Incident Response                      │ 8 bus. hrs    │ Per Incident             │
+      │ Low Incident Resolution                    │ 5 Bus. Days   │ Per Incident             │
+      │ Backup Completion Rate                     │ 99%           │ Calendar Month           │
+      │ Recovery Time Objective (RTO)              │ 4 hours       │ Per DR Event             │
+      │ Recovery Point Objective (RPO)             │ 1 hour        │ Per DR Event             │
+      └────────────────────────────────────────────┴───────────────┴──────────────────────────┘
+
+C-3.  Service Credits.
+
+      Production System Availability Service Credits:
+      ┌─────────────────────────────────────┬─────────────────────────────────────────────────┐
+      │ Actual Monthly Availability          │ Service Credit (% of Monthly Fee)              │
+      ├─────────────────────────────────────┼─────────────────────────────────────────────────┤
+      │ 99.90% – 99.94%                     │ 5%                                              │
+      │ 99.80% – 99.89%                     │ 10%                                             │
+      │ 99.50% – 99.79%                     │ 15%                                             │
+      │ Below 99.50%                        │ 25%                                             │
+      └─────────────────────────────────────┴─────────────────────────────────────────────────┘
+
+      Critical Incident Resolution Service Credits:
+      - Resolution time 4–8 hours: 2% of Monthly Fee per incident (max 3 incidents/month)
+      - Resolution time >8 hours: 5% of Monthly Fee per incident (max 3 incidents/month)
+
+      Maximum Monthly Service Credit: 25% of the Monthly Fee.  Service Credits are Client's
+      sole and exclusive remedy for Provider's failure to meet Service Level Targets and shall
+      not be construed as a limitation on Client's termination rights under Section 5.1(b).
+
+C-4.  Reporting.
+
+      Provider shall provide Client with a monthly Service Level Report within ten (10)
+      Business Days after the end of each calendar month.  The report shall include:
+      (a) actual performance against each Service Level Target; (b) summary of all incidents,
+      including severity, response time, resolution time, and root cause for Critical Incidents;
+      (c) any applicable Service Credits; (d) trend analysis and predictive indicators; and
+      (e) improvement initiatives underway or planned.
+
+C-5.  Disaster Recovery Testing.
+
+      Provider shall conduct a full disaster recovery failover test no less frequently than
+      once per calendar year, on a mutually agreed date with at least sixty (60) days' prior
+      notice to Client.  Client may send observers to witness the test.  Provider shall provide
+      Client with a written DR test report, including RTO and RPO achieved, within fifteen (15)
+      Business Days of completing the test.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+SCHEDULE D — DATA SECURITY REQUIREMENTS
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+D-1.  Data Classification and Handling.
+
+      Provider shall classify Client Data into the following categories and apply the controls
+      described below to each category:
+
+      Category 1 — Sensitive Financial Data:
+      - Includes: MNPI, NPPI under Gramm-Leach-Bliley, Reg S-P data, Client-designated SFD
+      - Storage:  AES-256 encryption at rest; HSM-managed keys; key rotation ≤ 365 days
+      - Transit:  TLS 1.3 minimum; no unencrypted transmission permitted
+      - Access:   Privileged Access Management (PAM) required; full immutable audit log;
+                  just-in-time access provisioning; two-person authorization for bulk export
+      - Backup:   Encrypted with separate key management instance; keys stored off-site
+
+      Category 2 — Confidential Business Data:
+      - Includes: Client Data not classified as Category 1
+      - Storage:  AES-256 encryption at rest
+      - Transit:  TLS 1.2 minimum
+      - Access:   Role-based access control (RBAC); quarterly access recertification
+      - Backup:   Encrypted backup
+
+      Category 3 — Internal Operating Data:
+      - Includes: Operational data used to deliver the Services, not attributable to Client
+      - Controls: Standard enterprise information security controls
+
+D-2.  Incident Response Timelines.
+
+      The following response timelines apply to Cyber Incidents affecting Client Data:
+      - Detection to containment: target ≤ 1 hour
+      - Containment to initial Client notification: ≤ 24 hours from detection
+      - Initial forensic assessment: ≤ 72 hours from detection
+      - Full incident report to Client: ≤ 30 days from resolution
+      - Law enforcement and regulatory reporting: as required by Applicable Law
+
+D-3.  Audit Rights.
+
+      Client shall have the right to audit Provider's information security controls no more
+      than once per calendar year, upon thirty (30) days' prior written notice, during Business
+      Hours and without material disruption to Provider's operations.  Provider may satisfy
+      Client's audit rights by providing a current SOC 2 Type II report covering the period
+      in question.  If Client elects to conduct its own audit or engage a third-party auditor:
+      (a) Client bears the cost unless the audit reveals a material noncompliance;
+      (b) Provider bears the cost if a material noncompliance is found; and
+      (c) the third-party auditor shall be bound by a non-disclosure agreement acceptable
+          to Provider.
+
+D-4.  Subprocessor and Subcontractor Security.
+
+      All Subcontractors who access Client Data shall:
+      (a) Be bound by data security obligations no less restrictive than those in this
+          Schedule D;
+      (b) Undergo Provider's third-party risk assessment prior to engagement;
+      (c) Provide Provider with their most recent SOC 2 Type II report upon request; and
+      (d) Be listed in the approved Subcontractor register, which Provider shall maintain
+          and provide to Client upon written request.
+
+D-5.  Data Residency.
+
+      All Client Data (Category 1 and Category 2) shall be stored and processed exclusively
+      within the United States, in the data center facilities identified in Schedule A,
+      Section A-1.1, unless Client provides prior written consent to a different location.
+      Provider shall not transfer any Client Data to any jurisdiction outside the United
+      States without Client's prior written consent and compliance with all applicable data
+      transfer laws and regulations.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+SCHEDULE E — TRANSITION PLAN
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+E-1.  Transition Overview.
+
+      This Schedule describes the framework for transition of the Services from Provider to
+      a successor provider or in-house operation at the expiration or termination of this
+      Agreement.  Detailed transition planning shall commence not later than twelve (12)
+      months prior to the anticipated end of the Term (whether by expiration or upon delivery
+      of any termination notice).
+
+E-2.  Transition Deliverables.
+
+      Provider shall deliver the following as part of Transition Assistance services:
+
+      (a) All Client Data in formats mutually agreed upon by the Parties, with data
+          verification checksums;
+      (b) Complete system documentation, including network diagrams, configuration
+          documentation, and operational runbooks;
+      (c) Operational procedures and playbooks for all managed services;
+      (d) Vendor and supplier contact information, including third-party software vendor
+          contacts and contract details (to the extent assignable);
+      (e) Open incident and change request documentation with status at handoff;
+      (f) Knowledge transfer sessions, not to exceed forty (40) hours per month during the
+          Transition Period, at no additional charge beyond the Monthly Fee; and
+      (g) A transition checklist with sign-off milestones, updated weekly during the
+          Transition Period.
+
+E-3.  Transition Fees.
+
+      Infrastructure support services during the Transition Period shall be invoiced at the
+      Monthly Fee rate then in effect.  Professional Services required for migration
+      assistance (beyond the forty knowledge-transfer hours per month included in the Monthly
+      Fee) shall be invoiced at Standard Rates per Schedule B, Section B-2.
+
+E-4.  Transition Cooperation.
+
+      Provider shall cooperate in good faith with Client's designated successor provider,
+      including: (a) providing the successor with reasonable access to Provider's systems
+      and personnel for planning purposes; (b) facilitating the parallel operation of
+      Provider's Systems and the successor's systems for up to sixty (60) days; and
+      (c) not taking any action designed to impede the transition or make it more costly
+      for Client.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+SIGNATURE PAGE
+────────────────────────────────────────────────────────────────────────────────────────────────
+
+IN WITNESS WHEREOF, the Parties have executed this Master Technology Services Agreement as of
+the Effective Date first written above.
+
+VERTEXCORE SYSTEMS, INC.
+
+By:    ___________________________
+Name:  Jonathan R. Whitmore
+Title: Chief Executive Officer
+Date:  January 15, 2024
+
+
+NOVALIS FINANCIAL GROUP LLC
+
+By:    ___________________________
+Name:  Helena M. Voss-Carrington
+Title: Chief Technology Officer
+Date:  January 15, 2024
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+END OF AGREEMENT
+────────────────────────────────────────────────────────────────────────────────────────────────
