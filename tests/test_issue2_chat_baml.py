@@ -84,7 +84,11 @@ def _body(req: object) -> dict:
 
 
 def _has_cache_control(req: object) -> bool:
-    return "cache_control" in _serialise(_body(req))
+    # Detect a real cache_control *key* in the request structure, not a literal
+    # "cache_control" substring (a question whose text is "cache_control" must
+    # not register as a marker). Stripping the key changes the body iff present.
+    body = _body(req)
+    return _strip_cache_control(body) != body
 
 
 def _strip_cache_control(obj: object) -> object:

@@ -21,6 +21,11 @@ exclude = ["baml_client/"]
 [tool.ruff.lint]
 select = ["E", "F", "W"]
 
+[tool.ruff.lint.per-file-ignores]
+# Descriptive BDD test names (test_when_..._then_...) and assert messages
+# routinely exceed the line limit; readability beats wrapping in test code.
+"tests/*" = ["E501"]
+
 [tool.pyright]
 exclude = ["baml_client/"]
 venvPath = "."
@@ -31,3 +36,7 @@ testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
+asyncio_mode = "auto"
+markers = [
+    "integration: live tests that hit the real Anthropic API (require ANTHROPIC_API_KEY)",
+]
