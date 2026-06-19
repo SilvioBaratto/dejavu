@@ -17,6 +17,8 @@ baml_client/watchers.py
 dejavu/__init__.py
 dejavu/contract.py
 dejavu/conversation.py
+dejavu/metrics.py
+dejavu/pricing.py
 dejavu.egg-info/PKG-INFO
 dejavu.egg-info/SOURCES.txt
 dejavu.egg-info/dependency_links.txt
@@ -26,6 +28,8 @@ dejavu/data/questions.json
 tests/test_clients_baml.py
 tests/test_cycle2_contract.py
 tests/test_cycle2_package_scaffold.py
+tests/test_cycle3_metrics.py
+tests/test_cycle3_pricing.py
 tests/test_issue2_chat_baml.py
 tests/test_issue3_baml_client_regen.py
 tests/test_issue6_load_questions.py
