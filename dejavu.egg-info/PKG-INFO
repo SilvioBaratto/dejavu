@@ -3,3 +3,8 @@ Name: dejavu
 Version: 0.1.0
 Summary: Prompt caching cost simulator CLI for Anthropic
 Requires-Python: >=3.11
+Requires-Dist: baml-py>=0.87
+Requires-Dist: typer>=0.12
+Requires-Dist: rich>=13
+Requires-Dist: anthropic>=0.40
+Requires-Dist: python-dotenv>=1.0

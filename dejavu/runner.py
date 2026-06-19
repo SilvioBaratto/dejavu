@@ -311,3 +311,9 @@ async def run_session(
         _append_history(history, question, result.uncached.text)
         if cfg.delay:
             await asyncio.sleep(cfg.delay)
+
+
+# ---------------------------------------------------------------------------
+# Resilience (Issue #15) — re-exported for backward-compatible imports
+# ---------------------------------------------------------------------------
+from dejavu.resilience import _backoff_delay, _is_transient, resilient_session  # noqa: E402,F401

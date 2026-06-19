@@ -7,7 +7,16 @@ name = "dejavu"
 version = "0.1.0"
 description = "Prompt caching cost simulator CLI for Anthropic"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "baml-py>=0.87",
+    "typer>=0.12",
+    "rich>=13",
+    "anthropic>=0.40",
+    "python-dotenv>=1.0",
+]
+
+[project.scripts]
+dejavu = "dejavu.cli:app"
 
 [tool.setuptools.packages.find]
 include = ["baml_client*", "dejavu*"]

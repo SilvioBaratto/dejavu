@@ -1,0 +1,5 @@
+baml-py>=0.87
+typer>=0.12
+rich>=13
+anthropic>=0.40
+python-dotenv>=1.0
