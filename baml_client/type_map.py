@@ -19,8 +19,5 @@ type_map = {
     "types.Message": types.Message,
     "stream_types.Message": stream_types.Message,
 
-    "types.Resume": types.Resume,
-    "stream_types.Resume": stream_types.Resume,
-
 
 }

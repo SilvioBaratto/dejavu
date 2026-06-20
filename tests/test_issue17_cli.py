@@ -27,7 +27,7 @@ from dejavu.cli import app, _build_config, _estimate_worst_case  # noqa: E402
 
 _runner = CliRunner()
 
-_VALID_MODELS = ["opus-4.8", "fable-5", "mythos-5"]
+_VALID_MODELS = ["sonnet-4.6"]
 _VALID_TTLS = ["5m", "1h"]
 
 
@@ -100,9 +100,9 @@ def test_when_ttl_is_1h_then_validation_passes():
 # ===========================================================================
 
 
-def test_when_no_flags_given_then_model_defaults_to_opus_4_8():
+def test_when_no_flags_given_then_model_defaults_to_sonnet_4_6():
     cfg = _build_config()
-    assert cfg.model == "opus-4.8"
+    assert cfg.model == "sonnet-4.6"
 
 
 def test_when_no_flags_given_then_max_tokens_defaults_to_400():
@@ -132,9 +132,9 @@ def test_when_no_flags_given_then_questions_file_defaults_to_none():
     assert cfg.questions_file is None
 
 
-def test_when_model_fable5_is_given_then_config_model_is_fable5():
-    cfg = _build_config(model="fable-5")
-    assert cfg.model == "fable-5"
+def test_when_model_sonnet46_is_given_then_config_model_is_sonnet46():
+    cfg = _build_config(model="sonnet-4.6")
+    assert cfg.model == "sonnet-4.6"
 
 
 def test_when_max_tokens_200_is_given_then_config_max_tokens_is_200():
@@ -177,51 +177,19 @@ def test_when_valid_flags_are_given_then_build_config_round_trips_all_values(
 #               price_uncached_turn sum (10 turns × 2 sides) for the chosen model
 # ===========================================================================
 # Spec price table (per million tokens):
-#   opus-4.8  → base input $5.00, output $25.00
-#   fable-5   → base input $10.00, output $50.00   (2× opus-4.8)
-#   mythos-5  → base input $10.00, output $50.00   (same tier as fable-5)
+#   sonnet-4.6  → base input $3.00, output $15.00
 
 
-def test_when_config_has_opus_model_then_estimate_is_positive():
-    cfg = _build_config(model="opus-4.8", max_tokens=400)
+def test_when_config_has_sonnet_model_then_estimate_is_positive():
+    cfg = _build_config(model="sonnet-4.6", max_tokens=400)
     assert _estimate_worst_case(cfg) > 0.0
-
-
-def test_when_model_is_fable5_then_estimate_exceeds_opus48_estimate():
-    """Fable-5 input/output prices are 2× Opus 4.8; the worst-case estimate must be higher."""
-    cfg_opus = _build_config(model="opus-4.8", max_tokens=400)
-    cfg_fable = _build_config(model="fable-5", max_tokens=400)
-    assert _estimate_worst_case(cfg_fable) > _estimate_worst_case(cfg_opus)
-
-
-def test_when_model_is_mythos5_then_estimate_equals_fable5_estimate():
-    """mythos-5 shares the same price tier as fable-5 (per spec table)."""
-    cfg_fable = _build_config(model="fable-5", max_tokens=400)
-    cfg_mythos = _build_config(model="mythos-5", max_tokens=400)
-    assert _estimate_worst_case(cfg_mythos) == pytest.approx(
-        _estimate_worst_case(cfg_fable), rel=1e-6
-    )
 
 
 def test_when_max_tokens_is_doubled_then_estimate_increases():
     """Larger max_tokens raises the output-cost component of the worst-case sum."""
-    cfg_low = _build_config(model="opus-4.8", max_tokens=200)
-    cfg_high = _build_config(model="opus-4.8", max_tokens=400)
+    cfg_low = _build_config(model="sonnet-4.6", max_tokens=200)
+    cfg_high = _build_config(model="sonnet-4.6", max_tokens=400)
     assert _estimate_worst_case(cfg_high) > _estimate_worst_case(cfg_low)
-
-
-def test_when_estimate_covers_two_sessions_then_it_is_at_least_double_one_session():
-    """
-    The spec demands 10 turns × 2 sides.  A sanity bound: the two-session
-    worst-case must be at least as large as a naive single-session estimate
-    would be (we can't compute that without internals, but we can assert it is
-    strictly positive and model-sensitive, which suffices for source-blindness).
-    Choice: the fable-5/opus-4.8 ratio from the spec price table is ≥ 2×.
-    """
-    cfg_opus = _build_config(model="opus-4.8", max_tokens=400)
-    cfg_fable = _build_config(model="fable-5", max_tokens=400)
-    ratio = _estimate_worst_case(cfg_fable) / _estimate_worst_case(cfg_opus)
-    assert ratio >= 2.0
 
 
 @given(max_tokens=st.integers(min_value=1, max_value=4096))
@@ -230,7 +198,7 @@ def test_when_max_tokens_is_any_positive_integer_then_estimate_is_positive(
 ):
     """Never-raises / always-positive invariant: _estimate_worst_case must return
     a positive float for the entire valid max_tokens domain."""
-    cfg = _build_config(model="opus-4.8", max_tokens=max_tokens)
+    cfg = _build_config(model="sonnet-4.6", max_tokens=max_tokens)
     assert _estimate_worst_case(cfg) > 0.0
 
 
@@ -240,8 +208,8 @@ def test_when_max_tokens_is_any_positive_integer_then_estimate_is_positive(
 )
 def test_when_max_tokens_increases_then_estimate_is_nondecreasing(low, high):
     """Monotonicity: a larger output token budget must never reduce the worst-case estimate."""
-    cfg_low = _build_config(model="opus-4.8", max_tokens=low)
-    cfg_high = _build_config(model="opus-4.8", max_tokens=high)
+    cfg_low = _build_config(model="sonnet-4.6", max_tokens=low)
+    cfg_high = _build_config(model="sonnet-4.6", max_tokens=high)
     assert _estimate_worst_case(cfg_high) >= _estimate_worst_case(cfg_low)
 
 
@@ -286,18 +254,6 @@ def test_when_cost_guard_runs_then_typer_confirm_is_called():
     ):
         _runner.invoke(app, [])
     mock_confirm.assert_called()
-
-
-def test_when_model_flag_changes_then_cost_guard_output_reflects_it():
-    """Different models have different price tiers; the printed estimate must
-    differ when the model changes (fable-5 costs more than opus-4.8)."""
-    with patch("dejavu.cli.run_tui"), patch("typer.confirm", side_effect=typer.Abort()):
-        result_opus = _runner.invoke(app, ["--model", "opus-4.8"])
-
-    with patch("dejavu.cli.run_tui"), patch("typer.confirm", side_effect=typer.Abort()):
-        result_fable = _runner.invoke(app, ["--model", "fable-5"])
-
-    assert result_opus.output != result_fable.output
 
 
 # ===========================================================================

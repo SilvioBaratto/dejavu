@@ -27,35 +27,14 @@ client<llm> CustomGPT5Chat {
   }
 }
 
-// Dejavu demo clients — the three models this project exercises.
-// Opus48 is the DEFAULT for all chat functions; Fable5 and Mythos5 are defined
-// for completeness but are not exercised live in Cycle 1.
-client<llm> Opus48 {
+// Dejavu demo client — the single model this project exercises.
+// Sonnet46 is the DEFAULT for all chat functions.
+client<llm> Sonnet46 {
   provider anthropic
   options {
-    model "claude-opus-4-8"
+    model "claude-sonnet-4-6"
     api_key env.ANTHROPIC_API_KEY
     // required: without this BAML strips cache_control metadata silently
-    allowed_role_metadata ["cache_control"]
-  }
-}
-
-// Fable 5 — second pricing tier. Model ID not yet confirmed; do not call live.
-client<llm> Fable5 {
-  provider anthropic
-  options {
-    model "claude-fable-5"
-    api_key env.ANTHROPIC_API_KEY
-    allowed_role_metadata ["cache_control"]
-  }
-}
-
-// Mythos 5 — limited availability; defined for parity but never used as default.
-client<llm> Mythos5 {
-  provider anthropic
-  options {
-    model "claude-mythos-5"
-    api_key env.ANTHROPIC_API_KEY
     allowed_role_metadata ["cache_control"]
   }
 }

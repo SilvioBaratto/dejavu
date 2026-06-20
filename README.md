@@ -62,7 +62,7 @@ dejavu [OPTIONS]
 
 | Flag | Default | Description |
 |---|---|---|
-| `--model` | `opus-4.8` | Model: `opus-4.8` / `fable-5` / `mythos-5` |
+| `--model` | `sonnet-4.6` | Model: `sonnet-4.6` |
 | `--doc` | *(built-in ~50-page contract)* | Path to a custom contract document |
 | `--questions-file` | *(built-in 10 questions)* | Path to a custom questions JSON file |
 | `--ttl` | `5m` | Cache TTL: `5m` (5-minute) or `1h` (1-hour) |
@@ -74,11 +74,11 @@ Before firing any real API calls, dejavu prints a **worst-case cost estimate** a
 ## Sample run
 
 ```bash
-# Default: Opus 4.8, built-in contract, 10 questions, 5-minute cache TTL
+# Default: Sonnet 4.6, built-in contract, 10 questions, 5-minute cache TTL
 dejavu
 
-# Custom model and cache TTL
-dejavu --model opus-4.8 --ttl 5m --max-tokens 400 --delay 1.0
+# Custom cache TTL and pacing
+dejavu --model sonnet-4.6 --ttl 5m --max-tokens 400 --delay 1.0
 
 # Custom contract document and questions
 dejavu --doc ./my_contract.txt --questions-file ./my_questions.json
@@ -103,11 +103,9 @@ Prices are fixed in `dejavu/pricing.py` and come from Anthropic's published pric
 
 | Model | Base input | 5m cache write | 1h cache write | Cache read | Output |
 |---|---|---|---|---|---|
-| **Claude Opus 4.8** (default) | $5.00 | $6.25 | $10.00 | $0.50 | $25.00 |
-| Claude Fable 5 | $10.00 | $12.50 | $20.00 | $1.00 | $50.00 |
-| Claude Mythos 5 *(limited availability)* | $10.00 | $12.50 | $20.00 | $1.00 | $50.00 |
+| **Claude Sonnet 4.6** (default) | $3.00 | $3.75 | $6.00 | $0.30 | $15.00 |
 
-Three models are supported; two cache tiers (`5m` and `1h`). Mythos 5 is listed for completeness but is limited-availability — dejavu never defaults to it.
+One model is supported; two cache tiers (`5m` and `1h`).
 
 ## Security
 

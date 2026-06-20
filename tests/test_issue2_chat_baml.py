@@ -8,7 +8,7 @@ Criteria tested (per oracle report):
   AC-1  [UNIT]  Message class with role/content string fields; history is Message[]
   AC-2  [UNIT]  ChatUncached renders with NO cache_control metadata anywhere
   AC-3  [UNIT]  ChatCached renders with a rolling ephemeral cache_control on history
-  AC-4  [UNIT]  Both functions pin the SAME client (Opus48)
+  AC-4  [UNIT]  Both functions pin the SAME client (Sonnet46)
   AC-5  [T3]    Prompts are byte-identical except for the cache_control kwarg
   AC-6  [UNIT]  Empty history does not crash either function
 
@@ -167,7 +167,7 @@ class TestChatCachedHasRollingCacheControl:
 
 
 # ──────────────────────────────────────────────────────────────────────────────
-# AC-4  Both functions pin the SAME client (Opus48 from issue #1)
+# AC-4  Both functions pin the SAME client (Sonnet46 from issue #1)
 # ──────────────────────────────────────────────────────────────────────────────
 
 
@@ -179,14 +179,14 @@ class TestBothFunctionsPinSameClient:
         req_c = b.request.ChatCached(document=_DOC, history=_H2, question=_Q)
         assert _body(req_u)["model"] == _body(req_c)["model"]
 
-    def test_when_chat_uncached_is_rendered_then_client_is_opus48(self):
-        # Opus48 is configured with model "claude-opus-4-8".
+    def test_when_chat_uncached_is_rendered_then_client_is_sonnet46(self):
+        # Sonnet46 is configured with model "claude-sonnet-4-6".
         req = b.request.ChatUncached(document=_DOC, history=_H2, question=_Q)
-        assert _body(req)["model"] == "claude-opus-4-8"
+        assert _body(req)["model"] == "claude-sonnet-4-6"
 
-    def test_when_chat_cached_is_rendered_then_client_is_opus48(self):
+    def test_when_chat_cached_is_rendered_then_client_is_sonnet46(self):
         req = b.request.ChatCached(document=_DOC, history=_H2, question=_Q)
-        assert _body(req)["model"] == "claude-opus-4-8"
+        assert _body(req)["model"] == "claude-sonnet-4-6"
 
 
 # ──────────────────────────────────────────────────────────────────────────────

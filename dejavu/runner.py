@@ -19,20 +19,18 @@ from dejavu.metrics import TurnMetrics, turn_metrics
 from dejavu.pricing import Model, Tier, price_cached_turn, price_uncached_turn
 
 _MODEL_IDS: dict[Model, str] = {
-    Model.OPUS_48: "claude-opus-4-8",
-    Model.FABLE_5: "claude-fable-5",
-    Model.MYTHOS_5: "claude-mythos-5",
+    Model.SONNET_46: "claude-sonnet-4-6",
 }
 
 
 def _to_model(model: Any) -> Model:
-    """Coerce any value to a Model enum; fall back to OPUS_48 for unknowns."""
+    """Coerce any value to a Model enum; fall back to SONNET_46 for unknowns."""
     if isinstance(model, Model):
         return model
     try:
         return Model(str(model))
     except ValueError:
-        return Model.OPUS_48
+        return Model.SONNET_46
 
 
 def _client_options(model: Model, max_tokens: int, temperature: float) -> dict:
@@ -127,7 +125,7 @@ class TokenEvent:
 class RunConfig:
     """Runtime configuration for the dual-session runner."""
 
-    model: Model = Model.OPUS_48
+    model: Model = Model.SONNET_46
     doc: str | None = None
     questions_file: str | None = None
     ttl: Tier = "5m"
@@ -228,7 +226,7 @@ def _safe_build_registry(cfg: Any) -> baml_py.ClientRegistry | None:
     """Return a live ClientRegistry, or None in headless/test mode (no API key)."""
     if not os.environ.get("ANTHROPIC_API_KEY"):
         return None
-    m = _to_model(getattr(cfg, "model", Model.OPUS_48))
+    m = _to_model(getattr(cfg, "model", Model.SONNET_46))
     max_t = int(getattr(cfg, "max_tokens", 400))
     temp = float(getattr(cfg, "temperature", 0.0))
     return build_registry(m, max_tokens=max_t, temperature=temp)
@@ -245,7 +243,7 @@ def _session_setup(cfg: Any) -> tuple:
     document = load_contract(_opt_path(cfg, "doc"))
     questions = load_questions(_opt_path(cfg, "questions_file"))
     registry = _safe_build_registry(cfg)
-    model = _to_model(getattr(cfg, "model", Model.OPUS_48))
+    model = _to_model(getattr(cfg, "model", Model.SONNET_46))
     return document, questions, registry, model, _safe_ttl(cfg)
 
 

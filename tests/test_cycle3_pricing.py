@@ -7,7 +7,7 @@ beyond what the criteria explicitly state must exist.
 
 Criteria tested (per oracle report):
   AC-1  [UNIT] Model str-Enum and frozen Price dataclass exposed from pricing.py
-  AC-2  [UNIT] Price table reproduces every spec cell; Mythos row is the Fable row
+  AC-2  [UNIT] Price table reproduces every spec cell for the single Sonnet 4.6 model
   AC-3  [UNIT] Tier selector picks correct write column; default tier is "5m"
   AC-4  [UNIT] price_uncached_turn returns input×base + output×output per-MTok
   AC-5  [UNIT] price_cached_turn returns four-term rolling formula for both tiers
@@ -40,35 +40,27 @@ from dejavu.pricing import (
 # Module-level helpers (derived from criteria, not from implementation)
 # ---------------------------------------------------------------------------
 
-_OPUS = Model("opus-4.8")
-_FABLE = Model("fable-5")
-_MYTHOS = Model("mythos-5")
+_SONNET = Model("sonnet-4.6")
 
 
 # ---------------------------------------------------------------------------
-# AC-1: Model str-Enum with three members + frozen Price with five fields
+# AC-1: Model str-Enum with one member + frozen Price with five fields
 # ---------------------------------------------------------------------------
 
 
 class TestModelEnum:
-    """AC-1: Model is a str-Enum whose values are the three model slugs."""
+    """AC-1: Model is a str-Enum whose value is the single model slug."""
 
-    def test_when_opus_48_slug_is_used_then_model_member_is_returned(self):
-        assert Model("opus-4.8") is not None
-
-    def test_when_fable_5_slug_is_used_then_model_member_is_returned(self):
-        assert Model("fable-5") is not None
-
-    def test_when_mythos_5_slug_is_used_then_model_member_is_returned(self):
-        assert Model("mythos-5") is not None
+    def test_when_sonnet_46_slug_is_used_then_model_member_is_returned(self):
+        assert Model("sonnet-4.6") is not None
 
     def test_when_model_member_is_inspected_then_it_is_a_str_subclass(self):
         for m in Model:
             assert isinstance(m, str), f"{m!r} must be an instance of str"
 
-    def test_when_model_values_are_listed_then_all_three_slugs_are_present(self):
+    def test_when_model_values_are_listed_then_the_single_slug_is_present(self):
         values = {m.value for m in Model}
-        assert {"opus-4.8", "fable-5", "mythos-5"}.issubset(values)
+        assert values == {"sonnet-4.6"}
 
     def test_when_invalid_slug_is_used_then_value_error_is_raised(self):
         with pytest.raises(ValueError):
@@ -79,112 +71,65 @@ class TestPriceDataclass:
     """AC-1: Price is a frozen dataclass with the five pricing fields."""
 
     def test_when_price_row_is_retrieved_then_base_field_exists(self):
-        p = get_price(_OPUS)
+        p = get_price(_SONNET)
         assert hasattr(p, "base")
 
     def test_when_price_row_is_retrieved_then_write_5m_field_exists(self):
-        p = get_price(_OPUS)
+        p = get_price(_SONNET)
         assert hasattr(p, "write_5m")
 
     def test_when_price_row_is_retrieved_then_write_1h_field_exists(self):
-        p = get_price(_OPUS)
+        p = get_price(_SONNET)
         assert hasattr(p, "write_1h")
 
     def test_when_price_row_is_retrieved_then_read_field_exists(self):
-        p = get_price(_OPUS)
+        p = get_price(_SONNET)
         assert hasattr(p, "read")
 
     def test_when_price_row_is_retrieved_then_output_field_exists(self):
-        p = get_price(_OPUS)
+        p = get_price(_SONNET)
         assert hasattr(p, "output")
 
     def test_when_price_row_is_mutated_then_frozen_error_is_raised(self):
         """Price must be frozen (immutable), not a plain mutable object."""
-        p = get_price(_OPUS)
+        p = get_price(_SONNET)
         with pytest.raises((AttributeError, TypeError)):
             p.base = 0.0  # type: ignore[misc]
 
     def test_when_price_instance_is_checked_then_it_is_a_price(self):
-        p = get_price(_OPUS)
+        p = get_price(_SONNET)
         assert isinstance(p, Price)
 
 
 # ---------------------------------------------------------------------------
-# AC-2: Price table cell values + MYTHOS_5 shares the same row as FABLE_5
+# AC-2: Price table cell values for the single Sonnet 4.6 model
 # ---------------------------------------------------------------------------
 
 
 class TestPriceTableValues:
-    """AC-2: Every spec cell reproduced exactly for all three models."""
+    """AC-2: Every spec cell reproduced exactly for the single model."""
 
-    # --- Opus 4.8 ---
+    # --- Sonnet 4.6 ---
 
-    def test_when_opus_base_is_retrieved_then_it_equals_5_00(self):
-        assert get_price(_OPUS).base == pytest.approx(5.00)
+    def test_when_sonnet_base_is_retrieved_then_it_equals_3_00(self):
+        assert get_price(_SONNET).base == pytest.approx(3.00)
 
-    def test_when_opus_write_5m_is_retrieved_then_it_equals_6_25(self):
-        assert get_price(_OPUS).write_5m == pytest.approx(6.25)
+    def test_when_sonnet_write_5m_is_retrieved_then_it_equals_3_75(self):
+        assert get_price(_SONNET).write_5m == pytest.approx(3.75)
 
-    def test_when_opus_write_1h_is_retrieved_then_it_equals_10_00(self):
-        assert get_price(_OPUS).write_1h == pytest.approx(10.00)
+    def test_when_sonnet_write_1h_is_retrieved_then_it_equals_6_00(self):
+        assert get_price(_SONNET).write_1h == pytest.approx(6.00)
 
-    def test_when_opus_read_is_retrieved_then_it_equals_0_50(self):
-        assert get_price(_OPUS).read == pytest.approx(0.50)
+    def test_when_sonnet_read_is_retrieved_then_it_equals_0_30(self):
+        assert get_price(_SONNET).read == pytest.approx(0.30)
 
-    def test_when_opus_output_is_retrieved_then_it_equals_25_00(self):
-        assert get_price(_OPUS).output == pytest.approx(25.00)
+    def test_when_sonnet_output_is_retrieved_then_it_equals_15_00(self):
+        assert get_price(_SONNET).output == pytest.approx(15.00)
 
-    # --- Fable 5 ---
+    # --- The price table holds exactly the single Sonnet 4.6 row ---
 
-    def test_when_fable_base_is_retrieved_then_it_equals_10_00(self):
-        assert get_price(_FABLE).base == pytest.approx(10.00)
-
-    def test_when_fable_write_5m_is_retrieved_then_it_equals_12_50(self):
-        assert get_price(_FABLE).write_5m == pytest.approx(12.50)
-
-    def test_when_fable_write_1h_is_retrieved_then_it_equals_20_00(self):
-        assert get_price(_FABLE).write_1h == pytest.approx(20.00)
-
-    def test_when_fable_read_is_retrieved_then_it_equals_1_00(self):
-        assert get_price(_FABLE).read == pytest.approx(1.00)
-
-    def test_when_fable_output_is_retrieved_then_it_equals_50_00(self):
-        assert get_price(_FABLE).output == pytest.approx(50.00)
-
-    # --- Mythos 5 (must mirror Fable 5 exactly) ---
-
-    def test_when_mythos_base_is_retrieved_then_it_equals_10_00(self):
-        assert get_price(_MYTHOS).base == pytest.approx(10.00)
-
-    def test_when_mythos_write_5m_is_retrieved_then_it_equals_12_50(self):
-        assert get_price(_MYTHOS).write_5m == pytest.approx(12.50)
-
-    def test_when_mythos_write_1h_is_retrieved_then_it_equals_20_00(self):
-        assert get_price(_MYTHOS).write_1h == pytest.approx(20.00)
-
-    def test_when_mythos_read_is_retrieved_then_it_equals_1_00(self):
-        assert get_price(_MYTHOS).read == pytest.approx(1.00)
-
-    def test_when_mythos_output_is_retrieved_then_it_equals_50_00(self):
-        assert get_price(_MYTHOS).output == pytest.approx(50.00)
-
-    # --- Identity: Mythos and Fable share the same row instance ---
-
-    def test_when_mythos_and_fable_rows_are_compared_then_they_are_equal(self):
-        """Value equality: every cell is numerically identical."""
-        assert PRICES[_MYTHOS] == PRICES[_FABLE]
-
-    def test_when_mythos_and_fable_rows_are_compared_then_they_are_the_same_object(
-        self,
-    ):
-        """Instance identity: both keys point to the same Price object.
-
-        Chosen interpretation: the spec says 'point both at the same Price row
-        so the values cannot drift'.  Object identity (is) is the only check
-        that fails when a future edit accidentally gives Mythos its own literal
-        row — value equality (==) would silently pass even then.
-        """
-        assert PRICES[_MYTHOS] is PRICES[_FABLE]
+    def test_when_prices_keys_are_listed_then_only_sonnet_46_is_present(self):
+        assert set(PRICES.keys()) == {_SONNET}
 
 
 # ---------------------------------------------------------------------------
@@ -196,27 +141,24 @@ class TestTierSelector:
     """AC-3: write_price selects write_5m or write_1h; default tier is '5m'."""
 
     def test_when_tier_is_5m_then_write_price_returns_write_5m(self):
-        assert write_price(_OPUS, "5m") == pytest.approx(get_price(_OPUS).write_5m)
+        assert write_price(_SONNET, "5m") == pytest.approx(get_price(_SONNET).write_5m)
 
     def test_when_tier_is_1h_then_write_price_returns_write_1h(self):
-        assert write_price(_OPUS, "1h") == pytest.approx(get_price(_OPUS).write_1h)
+        assert write_price(_SONNET, "1h") == pytest.approx(get_price(_SONNET).write_1h)
 
-    def test_when_tier_is_5m_then_fable_write_price_returns_12_50(self):
-        assert write_price(_FABLE, "5m") == pytest.approx(12.50)
+    def test_when_tier_is_5m_then_sonnet_write_price_returns_3_75(self):
+        assert write_price(_SONNET, "5m") == pytest.approx(3.75)
 
-    def test_when_tier_is_1h_then_fable_write_price_returns_20_00(self):
-        assert write_price(_FABLE, "1h") == pytest.approx(20.00)
+    def test_when_tier_is_1h_then_sonnet_write_price_returns_6_00(self):
+        assert write_price(_SONNET, "1h") == pytest.approx(6.00)
 
     def test_when_no_tier_is_given_then_default_is_5m(self):
         """Default tier must be '5m': write_price(m) == write_price(m, '5m')."""
-        assert write_price(_OPUS) == pytest.approx(write_price(_OPUS, "5m"))
-
-    def test_when_no_tier_is_given_for_fable_then_default_is_5m(self):
-        assert write_price(_FABLE) == pytest.approx(write_price(_FABLE, "5m"))
+        assert write_price(_SONNET) == pytest.approx(write_price(_SONNET, "5m"))
 
     def test_when_invalid_tier_is_given_then_error_is_raised(self):
         with pytest.raises((ValueError, KeyError, TypeError)):
-            write_price(_OPUS, "invalid")  # type: ignore[arg-type]
+            write_price(_SONNET, "invalid")  # type: ignore[arg-type]
 
 
 # ---------------------------------------------------------------------------
@@ -227,32 +169,36 @@ class TestTierSelector:
 class TestPriceUncachedTurn:
     """AC-4: per-MTok formula: input_tokens×base + output_tokens×output."""
 
-    def test_when_1m_input_tokens_opus_then_cost_equals_base_price(self):
-        # 1_000_000 input, 0 output → 1.0 MTok × $5.00 = $5.00
-        cost = price_uncached_turn(model=_OPUS, input_tokens=1_000_000, output_tokens=0)
-        assert cost == pytest.approx(5.00)
+    def test_when_1m_input_tokens_sonnet_then_cost_equals_base_price(self):
+        # 1_000_000 input, 0 output → 1.0 MTok × $3.00 = $3.00
+        cost = price_uncached_turn(
+            model=_SONNET, input_tokens=1_000_000, output_tokens=0
+        )
+        assert cost == pytest.approx(3.00)
 
-    def test_when_1m_output_tokens_opus_then_cost_equals_output_price(self):
-        # 0 input, 1_000_000 output → 1.0 MTok × $25.00 = $25.00
-        cost = price_uncached_turn(model=_OPUS, input_tokens=0, output_tokens=1_000_000)
-        assert cost == pytest.approx(25.00)
+    def test_when_1m_output_tokens_sonnet_then_cost_equals_output_price(self):
+        # 0 input, 1_000_000 output → 1.0 MTok × $15.00 = $15.00
+        cost = price_uncached_turn(
+            model=_SONNET, input_tokens=0, output_tokens=1_000_000
+        )
+        assert cost == pytest.approx(15.00)
 
-    def test_when_mixed_tokens_opus_then_cost_matches_hand_computed_value(self):
-        # 1 000 input, 500 output (Opus 4.8)
-        # = 1000/1_000_000 × 5.00  +  500/1_000_000 × 25.00
-        # = 0.005 + 0.0125 = 0.0175
-        cost = price_uncached_turn(model=_OPUS, input_tokens=1_000, output_tokens=500)
-        assert cost == pytest.approx(0.0175)
+    def test_when_mixed_tokens_sonnet_then_cost_matches_hand_computed_value(self):
+        # 1 000 input, 500 output (Sonnet 4.6)
+        # = 1000/1_000_000 × 3.00  +  500/1_000_000 × 15.00
+        # = 0.003 + 0.0075 = 0.0105
+        cost = price_uncached_turn(model=_SONNET, input_tokens=1_000, output_tokens=500)
+        assert cost == pytest.approx(0.0105)
 
-    def test_when_mixed_tokens_fable_then_cost_matches_hand_computed_value(self):
-        # 2 000 input, 100 output (Fable 5)
-        # = 2000/1_000_000 × 10.00  +  100/1_000_000 × 50.00
-        # = 0.02 + 0.005 = 0.025
-        cost = price_uncached_turn(model=_FABLE, input_tokens=2_000, output_tokens=100)
-        assert cost == pytest.approx(0.025)
+    def test_when_other_mixed_tokens_sonnet_then_cost_matches_hand_computed_value(self):
+        # 2 000 input, 100 output (Sonnet 4.6)
+        # = 2000/1_000_000 × 3.00  +  100/1_000_000 × 15.00
+        # = 0.006 + 0.0015 = 0.0075
+        cost = price_uncached_turn(model=_SONNET, input_tokens=2_000, output_tokens=100)
+        assert cost == pytest.approx(0.0075)
 
-    def test_when_zero_tokens_opus_then_cost_is_zero(self):
-        cost = price_uncached_turn(model=_OPUS, input_tokens=0, output_tokens=0)
+    def test_when_zero_tokens_sonnet_then_cost_is_zero(self):
+        cost = price_uncached_turn(model=_SONNET, input_tokens=0, output_tokens=0)
         assert cost == pytest.approx(0.0)
 
 
@@ -271,70 +217,74 @@ class TestPriceCachedTurn:
     _FQ = 500
     _OUT = 300
 
-    def test_when_cached_turn_5m_opus_then_cost_matches_hand_computed_value(self):
-        # Opus 4.8 / 5m tier:
-        # = 50000/1e6×0.50 + 5000/1e6×6.25 + 500/1e6×5.00 + 300/1e6×25.00
-        # = 0.025 + 0.03125 + 0.0025 + 0.0075
-        # = 0.06625
+    def test_when_cached_turn_5m_sonnet_then_cost_matches_hand_computed_value(self):
+        # Sonnet 4.6 / 5m tier:
+        # = 50000/1e6×0.30 + 5000/1e6×3.75 + 500/1e6×3.00 + 300/1e6×15.00
+        # = 0.015 + 0.01875 + 0.0015 + 0.0045
+        # = 0.03975
         cost = price_cached_turn(
-            model=_OPUS,
+            model=_SONNET,
             tier="5m",
             cache_read_tokens=self._CR,
             cache_creation_tokens=self._CW,
             fresh_question_tokens=self._FQ,
             output_tokens=self._OUT,
         )
-        assert cost == pytest.approx(0.06625)
+        assert cost == pytest.approx(0.03975)
 
-    def test_when_cached_turn_1h_opus_then_cost_matches_hand_computed_value(self):
-        # Opus 4.8 / 1h tier (write_1h=10.00 instead of 6.25):
-        # = 50000/1e6×0.50 + 5000/1e6×10.00 + 500/1e6×5.00 + 300/1e6×25.00
-        # = 0.025 + 0.05 + 0.0025 + 0.0075
-        # = 0.085
+    def test_when_cached_turn_1h_sonnet_then_cost_matches_hand_computed_value(self):
+        # Sonnet 4.6 / 1h tier (write_1h=6.00 instead of 3.75):
+        # = 50000/1e6×0.30 + 5000/1e6×6.00 + 500/1e6×3.00 + 300/1e6×15.00
+        # = 0.015 + 0.03 + 0.0015 + 0.0045
+        # = 0.051
         cost = price_cached_turn(
-            model=_OPUS,
+            model=_SONNET,
             tier="1h",
             cache_read_tokens=self._CR,
             cache_creation_tokens=self._CW,
             fresh_question_tokens=self._FQ,
             output_tokens=self._OUT,
         )
-        assert cost == pytest.approx(0.085)
+        assert cost == pytest.approx(0.051)
 
-    def test_when_cached_turn_5m_fable_then_cost_matches_hand_computed_value(self):
-        # Fable 5 / 5m tier (read=1.00, write_5m=12.50, base=10.00, output=50.00):
+    def test_when_cached_turn_5m_smaller_counts_then_cost_matches_hand_computed_value(
+        self,
+    ):
+        # Sonnet 4.6 / 5m tier (read=0.30, write_5m=3.75, base=3.00, output=15.00):
         # cache_read=10_000, cache_creation=2_000, fresh=200, output=100
-        # = 10000/1e6×1.00 + 2000/1e6×12.50 + 200/1e6×10.00 + 100/1e6×50.00
-        # = 0.01 + 0.025 + 0.002 + 0.005
-        # = 0.042
+        # = 10000/1e6×0.30 + 2000/1e6×3.75 + 200/1e6×3.00 + 100/1e6×15.00
+        # = 0.003 + 0.0075 + 0.0006 + 0.0015
+        # = 0.0126
         cost = price_cached_turn(
-            model=_FABLE,
+            model=_SONNET,
             tier="5m",
             cache_read_tokens=10_000,
             cache_creation_tokens=2_000,
             fresh_question_tokens=200,
             output_tokens=100,
         )
-        assert cost == pytest.approx(0.042)
+        assert cost == pytest.approx(0.0126)
 
-    def test_when_cached_turn_1h_fable_then_cost_matches_hand_computed_value(self):
-        # Fable 5 / 1h tier (write_1h=20.00):
-        # = 10000/1e6×1.00 + 2000/1e6×20.00 + 200/1e6×10.00 + 100/1e6×50.00
-        # = 0.01 + 0.04 + 0.002 + 0.005
-        # = 0.057
+    def test_when_cached_turn_1h_smaller_counts_then_cost_matches_hand_computed_value(
+        self,
+    ):
+        # Sonnet 4.6 / 1h tier (write_1h=6.00):
+        # = 10000/1e6×0.30 + 2000/1e6×6.00 + 200/1e6×3.00 + 100/1e6×15.00
+        # = 0.003 + 0.012 + 0.0006 + 0.0015
+        # = 0.0171
         cost = price_cached_turn(
-            model=_FABLE,
+            model=_SONNET,
             tier="1h",
             cache_read_tokens=10_000,
             cache_creation_tokens=2_000,
             fresh_question_tokens=200,
             output_tokens=100,
         )
-        assert cost == pytest.approx(0.057)
+        assert cost == pytest.approx(0.0171)
 
     def test_when_all_tokens_are_zero_then_cached_turn_cost_is_zero(self):
         cost = price_cached_turn(
-            model=_OPUS,
+            model=_SONNET,
             tier="5m",
             cache_read_tokens=0,
             cache_creation_tokens=0,
@@ -344,43 +294,43 @@ class TestPriceCachedTurn:
         assert cost == pytest.approx(0.0)
 
     def test_when_only_cache_read_tokens_then_cost_uses_read_rate(self):
-        # 1_000_000 cache_read tokens, all others 0, Opus 4.8
-        # = 1_000_000/1_000_000 × 0.50 = 0.50
+        # 1_000_000 cache_read tokens, all others 0, Sonnet 4.6
+        # = 1_000_000/1_000_000 × 0.30 = 0.30
         cost = price_cached_turn(
-            model=_OPUS,
+            model=_SONNET,
             tier="5m",
             cache_read_tokens=1_000_000,
             cache_creation_tokens=0,
             fresh_question_tokens=0,
             output_tokens=0,
         )
-        assert cost == pytest.approx(0.50)
+        assert cost == pytest.approx(0.30)
 
     def test_when_only_cache_creation_tokens_5m_then_cost_uses_write_5m_rate(self):
-        # 1_000_000 cache_creation tokens, all others 0, Opus 4.8, 5m tier
-        # = 1_000_000/1_000_000 × 6.25 = 6.25
+        # 1_000_000 cache_creation tokens, all others 0, Sonnet 4.6, 5m tier
+        # = 1_000_000/1_000_000 × 3.75 = 3.75
         cost = price_cached_turn(
-            model=_OPUS,
+            model=_SONNET,
             tier="5m",
             cache_read_tokens=0,
             cache_creation_tokens=1_000_000,
             fresh_question_tokens=0,
             output_tokens=0,
         )
-        assert cost == pytest.approx(6.25)
+        assert cost == pytest.approx(3.75)
 
     def test_when_only_cache_creation_tokens_1h_then_cost_uses_write_1h_rate(self):
-        # 1_000_000 cache_creation tokens, all others 0, Opus 4.8, 1h tier
-        # = 1_000_000/1_000_000 × 10.00 = 10.00
+        # 1_000_000 cache_creation tokens, all others 0, Sonnet 4.6, 1h tier
+        # = 1_000_000/1_000_000 × 6.00 = 6.00
         cost = price_cached_turn(
-            model=_OPUS,
+            model=_SONNET,
             tier="1h",
             cache_read_tokens=0,
             cache_creation_tokens=1_000_000,
             fresh_question_tokens=0,
             output_tokens=0,
         )
-        assert cost == pytest.approx(10.00)
+        assert cost == pytest.approx(6.00)
 
 
 # ---------------------------------------------------------------------------
@@ -398,24 +348,24 @@ class TestMTokDivision:
         self,
     ):
         """Sub-MTok input must yield a non-floored, strictly positive cost."""
-        cost = price_uncached_turn(model=_OPUS, input_tokens=1, output_tokens=0)
+        cost = price_uncached_turn(model=_SONNET, input_tokens=1, output_tokens=0)
         assert cost > 0.0
 
     def test_when_single_output_token_is_priced_uncached_then_cost_is_strictly_positive(
         self,
     ):
-        cost = price_uncached_turn(model=_OPUS, input_tokens=0, output_tokens=1)
+        cost = price_uncached_turn(model=_SONNET, input_tokens=0, output_tokens=1)
         assert cost > 0.0
 
     def test_when_zero_tokens_are_priced_uncached_then_cost_is_exactly_zero(self):
-        cost = price_uncached_turn(model=_OPUS, input_tokens=0, output_tokens=0)
+        cost = price_uncached_turn(model=_SONNET, input_tokens=0, output_tokens=0)
         assert cost == 0.0
 
     def test_when_single_cache_read_token_is_priced_then_cost_is_strictly_positive(
         self,
     ):
         cost = price_cached_turn(
-            model=_OPUS,
+            model=_SONNET,
             tier="5m",
             cache_read_tokens=1,
             cache_creation_tokens=0,
@@ -428,7 +378,7 @@ class TestMTokDivision:
         self,
     ):
         cost = price_cached_turn(
-            model=_OPUS,
+            model=_SONNET,
             tier="5m",
             cache_read_tokens=0,
             cache_creation_tokens=1,
@@ -451,9 +401,9 @@ def test_when_non_negative_tokens_then_uncached_cost_is_non_negative(
     input_tokens: int,
     output_tokens: int,
 ) -> None:
-    """price_uncached_turn >= 0.0 for all non-negative token counts (Opus)."""
+    """price_uncached_turn >= 0.0 for all non-negative token counts (Sonnet)."""
     cost = price_uncached_turn(
-        model=_OPUS, input_tokens=input_tokens, output_tokens=output_tokens
+        model=_SONNET, input_tokens=input_tokens, output_tokens=output_tokens
     )
     assert cost >= 0.0
 
@@ -463,7 +413,7 @@ def test_when_positive_input_tokens_are_given_then_uncached_cost_is_strictly_pos
     input_tokens: int,
 ) -> None:
     """Any positive input_tokens must produce a strictly positive cost — no floor."""
-    cost = price_uncached_turn(model=_OPUS, input_tokens=input_tokens, output_tokens=0)
+    cost = price_uncached_turn(model=_SONNET, input_tokens=input_tokens, output_tokens=0)
     assert cost > 0.0
 
 
@@ -472,7 +422,7 @@ def test_when_positive_output_tokens_are_given_then_uncached_cost_is_strictly_po
     output_tokens: int,
 ) -> None:
     """Any positive output_tokens must produce a strictly positive cost — no floor."""
-    cost = price_uncached_turn(model=_OPUS, input_tokens=0, output_tokens=output_tokens)
+    cost = price_uncached_turn(model=_SONNET, input_tokens=0, output_tokens=output_tokens)
     assert cost > 0.0
 
 
@@ -491,7 +441,7 @@ def test_when_any_non_negative_cached_tokens_are_given_then_cached_cost_is_non_n
 ) -> None:
     """price_cached_turn >= 0.0 for all non-negative token counts."""
     cost = price_cached_turn(
-        model=_OPUS,
+        model=_SONNET,
         tier="5m",
         cache_read_tokens=cache_read_tokens,
         cache_creation_tokens=cache_creation_tokens,
@@ -509,10 +459,10 @@ def test_when_input_tokens_increase_then_uncached_cost_is_monotonically_non_decr
 ) -> None:
     """More input tokens must never produce a lower cost (monotonicity)."""
     cost_low = price_uncached_turn(
-        model=_OPUS, input_tokens=baseline_input, output_tokens=output_tokens
+        model=_SONNET, input_tokens=baseline_input, output_tokens=output_tokens
     )
     cost_high = price_uncached_turn(
-        model=_OPUS,
+        model=_SONNET,
         input_tokens=baseline_input + more_input,
         output_tokens=output_tokens,
     )

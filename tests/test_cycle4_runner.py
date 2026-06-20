@@ -238,11 +238,11 @@ class TestSideEnum:
 class TestRunConfigDataclass:
     """AC-3: RunConfig is a frozen dataclass with documented fields and defaults."""
 
-    def test_when_run_config_is_created_with_defaults_then_model_is_opus_48(self):
+    def test_when_run_config_is_created_with_defaults_then_model_is_sonnet_46(self):
         from dejavu.runner import RunConfig
         from dejavu.pricing import Model
 
-        assert RunConfig().model == Model.OPUS_48
+        assert RunConfig().model == Model.SONNET_46
 
     def test_when_run_config_is_created_with_defaults_then_doc_is_none(self):
         from dejavu.runner import RunConfig
@@ -297,7 +297,7 @@ class TestBuildUncachedResult:
         from dejavu.pricing import Model
 
         collector = _make_collector_stub(input_tokens=100, output_tokens=50)
-        result = _build_uncached_result("answer", collector, Model.OPUS_48)
+        result = _build_uncached_result("answer", collector, Model.SONNET_46)
         assert isinstance(result, SideResult)
 
     def test_when_build_uncached_result_is_called_then_text_is_preserved(self):
@@ -305,7 +305,7 @@ class TestBuildUncachedResult:
         from dejavu.pricing import Model
 
         collector = _make_collector_stub(input_tokens=100, output_tokens=50)
-        result = _build_uncached_result("the uncached answer", collector, Model.OPUS_48)
+        result = _build_uncached_result("the uncached answer", collector, Model.SONNET_46)
         assert result.text == "the uncached answer"
 
     def test_when_build_uncached_result_is_called_then_metrics_input_tokens_match_collector(
@@ -315,7 +315,7 @@ class TestBuildUncachedResult:
         from dejavu.pricing import Model
 
         collector = _make_collector_stub(input_tokens=200, output_tokens=30)
-        result = _build_uncached_result("answer", collector, Model.OPUS_48)
+        result = _build_uncached_result("answer", collector, Model.SONNET_46)
         assert result.metrics.input_tokens == 200
 
     def test_when_build_uncached_result_is_called_then_metrics_output_tokens_match_collector(
@@ -325,7 +325,7 @@ class TestBuildUncachedResult:
         from dejavu.pricing import Model
 
         collector = _make_collector_stub(input_tokens=200, output_tokens=30)
-        result = _build_uncached_result("answer", collector, Model.OPUS_48)
+        result = _build_uncached_result("answer", collector, Model.SONNET_46)
         assert result.metrics.output_tokens == 30
 
     def test_when_build_uncached_result_is_called_then_cost_matches_price_uncached_turn(
@@ -340,30 +340,11 @@ class TestBuildUncachedResult:
         from dejavu.pricing import Model, price_uncached_turn
 
         collector = _make_collector_stub(input_tokens=1000, output_tokens=200)
-        result = _build_uncached_result("answer", collector, Model.OPUS_48)
+        result = _build_uncached_result("answer", collector, Model.SONNET_46)
 
         m = turn_metrics(collector)
         expected = price_uncached_turn(
-            model=Model.OPUS_48,
-            input_tokens=m.input_tokens,
-            output_tokens=m.output_tokens,
-        )
-        assert result.cost_usd == pytest.approx(expected)
-
-    def test_when_build_uncached_result_is_called_with_fable_model_then_cost_matches(
-        self,
-    ):
-        """Model is forwarded to price_uncached_turn — different model → different rate."""
-        from dejavu.runner import _build_uncached_result
-        from dejavu.metrics import turn_metrics
-        from dejavu.pricing import Model, price_uncached_turn
-
-        collector = _make_collector_stub(input_tokens=500, output_tokens=100)
-        result = _build_uncached_result("answer", collector, Model.FABLE_5)
-
-        m = turn_metrics(collector)
-        expected = price_uncached_turn(
-            model=Model.FABLE_5,
+            model=Model.SONNET_46,
             input_tokens=m.input_tokens,
             output_tokens=m.output_tokens,
         )
@@ -388,7 +369,7 @@ class TestBuildCachedResult:
             cached_input_tokens=5000,
             cache_creation_input_tokens=100,
         )
-        result = _build_cached_result("cached", collector, Model.OPUS_48)
+        result = _build_cached_result("cached", collector, Model.SONNET_46)
         assert isinstance(result, SideResult)
 
     def test_when_build_cached_result_is_called_then_text_is_preserved(self):
@@ -401,7 +382,7 @@ class TestBuildCachedResult:
             cached_input_tokens=5000,
             cache_creation_input_tokens=0,
         )
-        result = _build_cached_result("the cached answer", collector, Model.OPUS_48)
+        result = _build_cached_result("the cached answer", collector, Model.SONNET_46)
         assert result.text == "the cached answer"
 
     def test_when_build_cached_result_is_called_then_cost_matches_price_cached_turn(
@@ -423,11 +404,11 @@ class TestBuildCachedResult:
             cached_input_tokens=6000,
             cache_creation_input_tokens=200,
         )
-        result = _build_cached_result("cached", collector, Model.OPUS_48)
+        result = _build_cached_result("cached", collector, Model.SONNET_46)
 
         m = turn_metrics(collector)
         expected = price_cached_turn(
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             tier="5m",
             cache_read_tokens=m.cached_input_tokens or 0,
             cache_creation_tokens=m.cache_creation_input_tokens or 0,
@@ -448,39 +429,12 @@ class TestBuildCachedResult:
             cached_input_tokens=6000,
             cache_creation_input_tokens=200,
         )
-        result = _build_cached_result("cached", collector, Model.OPUS_48, tier="1h")
+        result = _build_cached_result("cached", collector, Model.SONNET_46, tier="1h")
 
         m = turn_metrics(collector)
         expected = price_cached_turn(
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             tier="1h",
-            cache_read_tokens=m.cached_input_tokens or 0,
-            cache_creation_tokens=m.cache_creation_input_tokens or 0,
-            fresh_question_tokens=m.input_tokens or 0,
-            output_tokens=m.output_tokens or 0,
-        )
-        assert result.cost_usd == pytest.approx(expected)
-
-    def test_when_build_cached_result_is_called_with_fable_model_then_cost_matches(
-        self,
-    ):
-        """Model is forwarded to price_cached_turn — different model → different rate."""
-        from dejavu.runner import _build_cached_result
-        from dejavu.metrics import turn_metrics
-        from dejavu.pricing import Model, price_cached_turn
-
-        collector = _make_collector_stub(
-            input_tokens=30,
-            output_tokens=15,
-            cached_input_tokens=3000,
-            cache_creation_input_tokens=50,
-        )
-        result = _build_cached_result("cached", collector, Model.FABLE_5)
-
-        m = turn_metrics(collector)
-        expected = price_cached_turn(
-            model=Model.FABLE_5,
-            tier="5m",
             cache_read_tokens=m.cached_input_tokens or 0,
             cache_creation_tokens=m.cache_creation_input_tokens or 0,
             fresh_question_tokens=m.input_tokens or 0,

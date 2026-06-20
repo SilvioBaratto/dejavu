@@ -144,7 +144,7 @@ def _make_cfg(
     max_tokens: int = 400,
     temperature: float = 0.1,
     delay: float = 0.0,
-    model: str = "claude-opus-4-8",
+    model: str = "claude-sonnet-4-6",
 ) -> MagicMock:
     cfg = MagicMock()
     cfg.max_tokens = max_tokens

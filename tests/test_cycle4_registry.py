@@ -7,8 +7,7 @@ No implementation source was read.
 
 Design choices (where spec is ambiguous):
 - Model is imported from dejavu.runner (natural home per project structure in requirements.md).
-- "claude-opus-4-8" is the exact ID for Opus 4.8 (explicit in requirements.md §Additional Notes).
-- Fable 5 / Mythos 5 IDs verified only as "claude-*" prefixed — exact strings not stated in spec.
+- "claude-sonnet-4-6" is the exact ID for Sonnet 4.6 (the single model this project exercises).
 - temperature range [0.0, 1.0] inferred from "low-temperature" in the issue title.
 - set_primary test patches baml_py.ClientRegistry and forces a fresh import of dejavu.runner so
   the patch is active when the module binds its reference to the class, regardless of import style.
@@ -23,10 +22,10 @@ import pytest
 from hypothesis import given, settings, strategies as st
 
 
-# ─── _MODEL_IDS: maps all three Model members to claude-* ids ────────────────
+# ─── _MODEL_IDS: maps the single Model member to its claude-* id ─────────────
 
 
-def test_when_model_ids_inspected_then_exactly_three_model_members_are_mapped():
+def test_when_model_ids_inspected_then_every_model_member_is_mapped():
     from dejavu.runner import Model, _MODEL_IDS
 
     assert set(_MODEL_IDS.keys()) == set(Model)
@@ -41,11 +40,11 @@ def test_when_model_ids_inspected_then_all_values_start_with_claude():
         )
 
 
-def test_when_model_ids_inspected_then_claude_opus_4_8_is_among_values():
-    """requirements.md §Additional Notes explicitly names this model ID."""
+def test_when_model_ids_inspected_then_claude_sonnet_4_6_is_among_values():
+    """The single model this project exercises maps to claude-sonnet-4-6."""
     from dejavu.runner import _MODEL_IDS
 
-    assert "claude-opus-4-8" in _MODEL_IDS.values()
+    assert "claude-sonnet-4-6" in _MODEL_IDS.values()
 
 
 # ─── _client_options: returns correct dict contents ──────────────────────────

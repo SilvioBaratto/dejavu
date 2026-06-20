@@ -46,7 +46,7 @@ def _render_to_str(renderer: TuiRenderer, state: RenderState) -> str:
 def _make_cfg(**overrides):
     """Minimal fake config matching the CLI flags documented in requirements.md."""
     defaults = dict(
-        model="opus-4.8",
+        model="sonnet-4.6",
         ttl="5m",
         max_tokens=400,
         delay=0.0,

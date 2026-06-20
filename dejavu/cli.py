@@ -50,7 +50,7 @@ def _load_env() -> None:
 
 
 def _build_config(
-    model: str = "opus-4.8",
+    model: str = "sonnet-4.6",
     doc: Optional[str] = None,
     questions_file: Optional[str] = None,
     ttl: str = "5m",
@@ -119,7 +119,7 @@ def _confirm_spend(estimate: float) -> None:
 @app.command()
 def main(
     model: str = typer.Option(
-        "opus-4.8", "--model", help="Model: opus-4.8 / fable-5 / mythos-5"
+        "sonnet-4.6", "--model", help="Model: sonnet-4.6"
     ),
     doc: Optional[str] = typer.Option(
         None, "--doc", help="Path to a custom contract document"

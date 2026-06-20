@@ -1,6 +1,6 @@
 """
 Source-blind tests for issue #3: regenerate baml_client/ and verify live
-Claude Opus 4.8 access.
+Claude Sonnet 4.6 access.
 
 All tests are derived solely from acceptance criteria and requirements.md.
 No implementation source was read; no baml_client/ internals are assumed
@@ -11,12 +11,12 @@ Criteria tested (per oracle report):
                 (proxy for "baml-cli generate runs cleanly")
   AC-2  [UNIT]  b.ChatUncached and b.ChatCached are importable on b;
                 types.Message is importable from baml_client.types
-  AC-3  [UNIT]  Real call to b.ChatUncached against claude-opus-4-8
+  AC-3  [UNIT]  Real call to b.ChatUncached against claude-sonnet-4-6
                 returns a non-empty string
   AC-4  [UNIT]  Real call to b.ChatCached with one-turn history
                 returns a non-empty string
-  AC-5  [UNIT]  Both chat functions route to claude-opus-4-8, so
-                Mythos5 unavailability cannot cause AC-3 or AC-4 to fail
+  AC-5  [UNIT]  Both chat functions route to claude-sonnet-4-6 (the single
+                model this project exercises)
 
 Skipped (not runtime-verifiable per oracle):
   AC-6  All tests pass    — boilerplate suite gate; no per-criterion assertion
@@ -150,7 +150,7 @@ class TestBamlClientImports:
 @pytest.mark.skipif(_NO_API_KEY, reason="ANTHROPIC_API_KEY not set — live call skipped")
 def test_when_chat_uncached_is_called_live_then_a_non_empty_string_is_returned():
     """
-    AC-3: b.ChatUncached against claude-opus-4-8 returns a response (HTTP 200 implies
+    AC-3: b.ChatUncached against claude-sonnet-4-6 returns a response (HTTP 200 implies
     a parsed, non-empty string from BAML — BAML raises on non-2xx responses).
 
     Chosen interpretation: 'returns successfully (200)' is satisfied when BAML returns
@@ -169,7 +169,7 @@ def test_when_chat_uncached_is_called_live_then_a_non_empty_string_is_returned()
 @pytest.mark.skipif(_NO_API_KEY, reason="ANTHROPIC_API_KEY not set — live call skipped")
 def test_when_chat_cached_is_called_live_with_one_turn_history_then_a_non_empty_string_is_returned():  # noqa: E501
     """
-    AC-4: b.ChatCached with one full exchange in history against claude-opus-4-8
+    AC-4: b.ChatCached with one full exchange in history against claude-sonnet-4-6
     returns a response without raising.
 
     'One-turn history' is interpreted as one user message + one assistant message —
@@ -181,48 +181,31 @@ def test_when_chat_cached_is_called_live_with_one_turn_history_then_a_non_empty_
 
 
 # ---------------------------------------------------------------------------
-# AC-5  Mythos5 unavailability does not fail this issue
-#       Verified by confirming both functions route to claude-opus-4-8 (not Mythos5).
+# AC-5  Both chat functions route to the single claude-sonnet-4-6 model
 # ---------------------------------------------------------------------------
 
 
-class TestMythos5UnavailabilityDoesNotBreakIssue:
+class TestBothFunctionsRouteToSonnet46:
     """
-    AC-5: Mythos5 being uncallable must not cause this issue to fail.
+    AC-5: Both chat functions must dispatch to claude-sonnet-4-6 — the single
+    model this project exercises.
 
-    Chosen approach: assert that both chat functions dispatch to claude-opus-4-8
-    by inspecting the dry-run request body via b.request.*. Because neither
-    function routes through Mythos5, Mythos5 unavailability cannot affect AC-3 or AC-4.
+    Chosen approach: assert that both chat functions dispatch to claude-sonnet-4-6
+    by inspecting the dry-run request body via b.request.*.
     """
 
-    def test_when_chat_uncached_request_is_inspected_then_model_is_claude_opus_4_8(
+    def test_when_chat_uncached_request_is_inspected_then_model_is_claude_sonnet_4_6(
         self,
     ):
         req = b.request.ChatUncached(document=_DOC, history=[], question=_Q)
         body = req.body.json()
-        assert body.get("model") == "claude-opus-4-8", (
-            "ChatUncached must target claude-opus-4-8, not any Mythos5 model"
+        assert body.get("model") == "claude-sonnet-4-6", (
+            "ChatUncached must target claude-sonnet-4-6"
         )
 
-    def test_when_chat_cached_request_is_inspected_then_model_is_claude_opus_4_8(self):
+    def test_when_chat_cached_request_is_inspected_then_model_is_claude_sonnet_4_6(self):
         req = b.request.ChatCached(document=_DOC, history=_H1, question=_Q)
         body = req.body.json()
-        assert body.get("model") == "claude-opus-4-8", (
-            "ChatCached must target claude-opus-4-8, not any Mythos5 model"
-        )
-
-    def test_when_chat_uncached_request_is_inspected_then_model_is_not_mythos5(self):
-        req = b.request.ChatUncached(document=_DOC, history=[], question=_Q)
-        body = req.body.json()
-        model: str = body.get("model", "")
-        assert "mythos" not in model.lower(), (
-            "ChatUncached must not route through any Mythos5 model"
-        )
-
-    def test_when_chat_cached_request_is_inspected_then_model_is_not_mythos5(self):
-        req = b.request.ChatCached(document=_DOC, history=_H1, question=_Q)
-        body = req.body.json()
-        model: str = body.get("model", "")
-        assert "mythos" not in model.lower(), (
-            "ChatCached must not route through any Mythos5 model"
+        assert body.get("model") == "claude-sonnet-4-6", (
+            "ChatCached must target claude-sonnet-4-6"
         )

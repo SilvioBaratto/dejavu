@@ -19,7 +19,7 @@ class Message {
 // ── No-cache variant ────────────────────────────────────────────────────────
 
 function ChatUncached(document: string, history: Message[], question: string) -> string {
-  client Opus48
+  client Sonnet46
   prompt #"
     {{ _.role("system") }}
     You are a helpful assistant that answers questions about a contract document.
@@ -42,7 +42,7 @@ function ChatUncached(document: string, history: Message[], question: string) ->
 // ── Rolling-cache variant ────────────────────────────────────────────────────
 
 function ChatCached(document: string, history: Message[], question: string) -> string {
-  client Opus48
+  client Sonnet46
   prompt #"
     {{ _.role("system") }}
     You are a helpful assistant that answers questions about a contract document.

@@ -8,3 +8,9 @@ Requires-Dist: typer>=0.12
 Requires-Dist: rich>=13
 Requires-Dist: anthropic>=0.40
 Requires-Dist: python-dotenv>=1.0
+Provides-Extra: dev
+Requires-Dist: ruff>=0.6; extra == "dev"
+Requires-Dist: pytest>=8; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.24; extra == "dev"
+Requires-Dist: hypothesis>=6; extra == "dev"
+Requires-Dist: tiktoken>=0.7; extra == "dev"

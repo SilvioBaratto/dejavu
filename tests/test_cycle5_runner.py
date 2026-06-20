@@ -136,7 +136,7 @@ class TestRunSideCollectorWiring:
             history=[],
             question="q?",
             registry=MagicMock(),
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             on_token=lambda e: None,
             build_result=lambda t, c, m: MagicMock(),
         )
@@ -158,7 +158,7 @@ class TestRunSideCollectorWiring:
             history=[],
             question="q?",
             registry=MagicMock(),
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             on_token=lambda e: None,
             build_result=lambda t, c, m: MagicMock(),
         )
@@ -182,7 +182,7 @@ class TestRunSideCollectorWiring:
             history=[],
             question="q?",
             registry=MagicMock(),
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             on_token=lambda e: None,
             build_result=lambda t, c, m: MagicMock(),
         )
@@ -205,7 +205,7 @@ class TestRunSideCollectorWiring:
             history=[],
             question="q?",
             registry=MagicMock(),
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             on_token=lambda e: None,
             build_result=lambda t, c, m: MagicMock(),
         )
@@ -228,7 +228,7 @@ class TestRunSideCollectorWiring:
             history=[],
             question="q?",
             registry=sentinel_registry,
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             on_token=lambda e: None,
             build_result=lambda t, c, m: MagicMock(),
         )
@@ -260,7 +260,7 @@ class TestRunSideCollectorWiring:
                 history=[],
                 question="q?",
                 registry=MagicMock(),
-                model=Model.OPUS_48,
+                model=Model.SONNET_46,
                 on_token=lambda e: None,
                 build_result=capture,
             )
@@ -291,7 +291,7 @@ class TestTokenEventEmission:
             history=[],
             question="q?",
             registry=MagicMock(),
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             on_token=lambda e: calls.append(e),
             build_result=lambda t, c, m: MagicMock(),
         )
@@ -313,7 +313,7 @@ class TestTokenEventEmission:
             history=[],
             question="q?",
             registry=MagicMock(),
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             on_token=lambda e: calls.append(e),
             build_result=lambda t, c, m: MagicMock(),
         )
@@ -335,7 +335,7 @@ class TestTokenEventEmission:
             history=[],
             question="q?",
             registry=MagicMock(),
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             on_token=lambda e: calls.append(e),
             build_result=lambda t, c, m: MagicMock(),
         )
@@ -357,7 +357,7 @@ class TestTokenEventEmission:
             history=[],
             question="q?",
             registry=MagicMock(),
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             on_token=lambda e: calls.append(e),
             build_result=lambda t, c, m: MagicMock(),
         )
@@ -379,7 +379,7 @@ class TestTokenEventEmission:
             history=[],
             question="q?",
             registry=MagicMock(),
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             on_token=lambda e: calls.append(e),
             build_result=lambda t, c, m: MagicMock(),
         )
@@ -402,7 +402,7 @@ class TestTokenEventEmission:
             history=[],
             question="q?",
             registry=MagicMock(),
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             on_token=lambda e: calls.append(e),
             build_result=lambda t, c, m: MagicMock(),
         )
@@ -424,7 +424,7 @@ class TestTokenEventEmission:
             history=[],
             question="q?",
             registry=MagicMock(),
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             on_token=lambda e: calls.append(e),
             build_result=lambda t, c, m: MagicMock(),
         )
@@ -456,7 +456,7 @@ def test_when_stream_yields_n_partials_then_exactly_n_token_events_are_emitted(
             history=[],
             question="q?",
             registry=MagicMock(),
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             on_token=lambda e: calls.append(e),
             build_result=lambda t, c, m: None,
         )
@@ -530,7 +530,7 @@ class TestEmit:
             history=[],
             question="q?",
             registry=MagicMock(),
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             on_token=lambda e: received.append(e.partial),
             build_result=lambda t, c, m: MagicMock(),
         )
@@ -557,7 +557,7 @@ class TestEmit:
             history=[],
             question="q?",
             registry=MagicMock(),
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             on_token=async_sink,
             build_result=lambda t, c, m: MagicMock(),
         )
@@ -588,7 +588,7 @@ class TestRunSideBuildResult:
             history=[],
             question="q?",
             registry=MagicMock(),
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             on_token=lambda e: None,
             build_result=lambda t, c, m: sentinel,
         )
@@ -612,7 +612,7 @@ class TestRunSideBuildResult:
             history=[],
             question="q?",
             registry=MagicMock(),
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             on_token=lambda e: None,
             build_result=lambda t, c, m: received_text.append(t),
         )
@@ -632,11 +632,11 @@ class TestRunSideBuildResult:
             history=[],
             question="q?",
             registry=MagicMock(),
-            model=Model.FABLE_5,
+            model=Model.SONNET_46,
             on_token=lambda e: None,
             build_result=lambda t, c, m: received_models.append(m),
         )
-        assert received_models == [Model.FABLE_5]
+        assert received_models == [Model.SONNET_46]
 
     @pytest.mark.asyncio
     async def test_when_run_side_is_called_then_build_result_receives_a_baml_py_collector(
@@ -655,7 +655,7 @@ class TestRunSideBuildResult:
             history=[],
             question="q?",
             registry=MagicMock(),
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             on_token=lambda e: None,
             build_result=lambda t, c, m: received_collectors.append(c),
         )
@@ -685,32 +685,10 @@ class TestRunSideBuildResult:
             history=[],
             question="q?",
             registry=MagicMock(),
-            model=Model.OPUS_48,
+            model=Model.SONNET_46,
             on_token=lambda e: None,
             build_result=lambda t, c, m: build_collectors.append(c),
         )
 
         baml_options_collector = stream_fn.last_kwargs["baml_options"]["collector"]
         assert build_collectors[0] is baml_options_collector
-
-    @pytest.mark.asyncio
-    async def test_when_run_side_is_called_with_opus_model_then_build_result_receives_opus_model(
-        self,
-    ):
-        from dejavu.runner import run_side, Side
-        from dejavu.pricing import Model
-
-        received_models: list = []
-        await run_side(
-            index=0,
-            side=Side.UNCACHED,
-            stream_fn=_FakeStreamFn(partials=["tok"], final="tok"),
-            document="d",
-            history=[],
-            question="q?",
-            registry=MagicMock(),
-            model=Model.OPUS_48,
-            on_token=lambda e: None,
-            build_result=lambda t, c, m: received_models.append(m),
-        )
-        assert received_models == [Model.OPUS_48]

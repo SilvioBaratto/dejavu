@@ -1,4 +1,4 @@
-"""Anthropic price table and per-turn cost calculators (3 models, 2 cache tiers)."""
+"""Anthropic price table and per-turn cost calculators (1 model, 2 cache tiers)."""
 
 from __future__ import annotations
 
@@ -16,9 +16,7 @@ _VALID_TIERS: frozenset[str] = frozenset({"5m", "1h"})
 class Model(str, Enum):
     """Anthropic model identifiers; values double as future CLI keys."""
 
-    OPUS_48 = "opus-4.8"
-    FABLE_5 = "fable-5"
-    MYTHOS_5 = "mythos-5"
+    SONNET_46 = "sonnet-4.6"
 
 
 @dataclass(frozen=True)
@@ -32,13 +30,10 @@ class Price:
     output: float
 
 
-_OPUS_ROW = Price(base=5.00, write_5m=6.25, write_1h=10.00, read=0.50, output=25.00)
-_FABLE_ROW = Price(base=10.00, write_5m=12.50, write_1h=20.00, read=1.00, output=50.00)
+_SONNET_ROW = Price(base=3.00, write_5m=3.75, write_1h=6.00, read=0.30, output=15.00)
 
 PRICES: dict[Model, Price] = {
-    Model.OPUS_48: _OPUS_ROW,
-    Model.FABLE_5: _FABLE_ROW,
-    Model.MYTHOS_5: _FABLE_ROW,  # same instance — cannot drift
+    Model.SONNET_46: _SONNET_ROW,
 }
 
 
